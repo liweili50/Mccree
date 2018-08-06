@@ -11,3 +11,8 @@ body {
   url('//at.alicdn.com/t/font_730139_3x205xwdmgx.ttf') format('truetype'),
   url('//at.alicdn.com/t/font_730139_3x205xwdmgx.svg#iconfont') format('svg');
 }
+.iconfont {
+  font-family: 'iconfont';
+  font-style: normal;
+  
+}
