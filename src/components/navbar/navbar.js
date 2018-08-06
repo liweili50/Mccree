@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import './navbar.css';
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -21,13 +22,13 @@ class Navbar extends Component {
           <div className={isCollapse ? 'collapse navbar-collapse' : 'navbar-collapse'} id="navbarCollapse">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <Link to="/" className="nav-link">Home <span className="sr-only">(current)</span></Link>
+                <Link to="/" className="nav-link">首页 <span className="sr-only">(current)</span></Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">About</Link>
+                <Link to="/about" className="nav-link">归档</Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">Contact</Link>
+                <Link to="/contact" className="nav-link">关于</Link>
               </li>
             </ul>
           </div>
