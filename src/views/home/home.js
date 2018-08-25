@@ -6,11 +6,11 @@ class Home extends Component {
     return (
       <div>
         <h1 className="title">
-          Hello World
-      </h1>
+          我收藏的一些网站
+        </h1>
         <p className="subtitle">
           My first website with <strong>Bulma</strong>!
-      </p>
+        </p>
       </div>
     );
   }
