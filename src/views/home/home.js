@@ -5,7 +5,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        首页
+        <h1 className="title">
+          Hello World
+      </h1>
+        <p className="subtitle">
+          My first website with <strong>Bulma</strong>!
+      </p>
       </div>
     );
   }

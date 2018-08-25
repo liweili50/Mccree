@@ -1,37 +1,40 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import './navbar.css';
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {isCollapse: true};
+    this.state = { isCollapse: false };
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.setState({isCollapse: !this.state.isCollapse});
+    this.setState({ isCollapse: !this.state.isCollapse });
   }
   render() {
     const isCollapse = this.state.isCollapse;
     return (
-      <nav className="navbar navbar-toggleable-md">
-        <button onClick={this.handleClick} className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <i className="iconfont">&#xe7f4;</i>
-        </button>
-        <div className="container">
-          <Link to="/" className="navbar-brand">React Website</Link>
-          <div className={isCollapse ? 'collapse navbar-collapse' : 'navbar-collapse'} id="navbarCollapse">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <Link to="/" className="nav-link">首页 <span className="sr-only">(current)</span></Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/about" className="nav-link">归档</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contact" className="nav-link">关于</Link>
-              </li>
-            </ul>
+      <nav className="navbar is-transparent">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="https://bulma.io">
+            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+          </a>
+          <div className="navbar-burger burger" onClick={this.handleClick} data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
+        </div>
+        <div id="navbarExampleTransparentExample" className={isCollapse ? 'navbar-menu is-active' : 'navbar-menu'} >
+          <div className="navbar-start">
+            <a className="navbar-item" href="">首页</a>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
+                发现
+              </a>
+            </div>
+          </div>
+
+
         </div>
       </nav>
     );
