@@ -16,24 +16,25 @@ class Navbar extends Component {
       <nav className="navbar is-transparent is-spaced">
         <div className="container">
           <div className="navbar-brand">
-            <a className="navbar-item" href="https://bulma.io">
+            <a className="navbar-item" href="javscript:void(0)">
               <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
             </a>
-            <div className="navbar-burger burger" onClick={this.handleClick} data-target="navbarExampleTransparentExample">
+            <div className= {`navbar-burger burger ${isCollapse ? 'is-active' : ''}`}   onClick={this.handleClick} data-target="navbarExampleTransparentExample">
               <span></span>
               <span></span>
               <span></span>
             </div>
           </div>
-          <div id="navbarExampleTransparentExample" className={isCollapse ? 'navbar-menu is-active' : 'navbar-menu'} >
+          <div id="navbarExampleTransparentExample" className={`navbar-menu ${isCollapse ? 'is-active' : ''}`} >
             <div className="navbar-start">
               <Link to="/home" className="navbar-item">首页</Link>
               <Link to="/contact" className="navbar-item">分类</Link>
-            </div>
-            <div className="navbar-end">
-              <span>github</span>
               <Link to="/contact" className="navbar-item">收藏夹</Link>
               <Link to="/home" className="navbar-item">关于</Link>
+            </div>
+            <div className="navbar-end">
+              <Link to="/contact" className="navbar-item">W</Link>
+              <Link to="/home" className="navbar-item">G</Link>
             </div>
           </div>
         </div>
