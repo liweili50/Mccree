@@ -27,14 +27,14 @@ class Navbar extends Component {
           </div>
           <div id="navbarExampleTransparentExample" className={`navbar-menu ${isCollapse ? 'is-active' : ''}`} >
             <div className="navbar-start">
-              <Link to="/home" className="navbar-item">首页</Link>
+              <Link to="/home" className="navbar-item is-active">首页</Link>
               <Link to="/contact" className="navbar-item">分类</Link>
-              <Link to="/contact" className="navbar-item">收藏夹</Link>
+              <Link to="/contact" className="navbar-item">书签</Link>
               <Link to="/home" className="navbar-item">关于</Link>
             </div>
             <div className="navbar-end">
-              <Link to="/contact" className="navbar-item">W</Link>
-              <Link to="/home" className="navbar-item">G</Link>
+            <a className="navbar-item" href="https://www.zhihu.com/people/li-wei-Jonas/activities"><i className="czs-zhihu"></i></a>
+            <a className="navbar-item" href="https://github.com/liweili50"><i className="czs-github-logo"></i></a>
             </div>
           </div>
         </div>
