@@ -12,11 +12,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="app-container has-background-light">
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
-        {/* <Route exact path="" component={Home} /> */}
         <Footer />
         </div>
       </Router>

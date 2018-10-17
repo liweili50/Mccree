@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import './index.css';
+import './home.css';
+import Article from '../../components/article/article'
+import Card from '../../components/card/card'
 
 class Home extends Component {
   render() {
     return (
-      <main className="main">
+      <div className="section is-body is-mobile">
         <div className="container">
-          <div className="columns">
-            <div className="column is-8">
-              <p className="bd-notification is-primary">
-                main
-              </p>
-            </div>
+          <div className="columns is-desktop">
             <div className="column">
-              <p className="bd-notification is-primary">
-                aside
-              </p>
+              <Article />
+              <Article />
+            </div>
+            <div className="column is-narrow is-narrow-fullhd">
+              <Card />
             </div>
           </div>
         </div>
-      </main>
+      </div>
     );
   }
 }

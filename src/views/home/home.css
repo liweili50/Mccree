@@ -1,0 +1,6 @@
+.is-body {
+  padding-top: 1.5rem;
+}
+.is-mobile.section {
+  padding: 1.5rem 0;
+}
