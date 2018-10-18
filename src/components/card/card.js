@@ -4,33 +4,56 @@ import './card.css';
 class Card extends Component {
   render() {
     return (
-      <div className="card">
-        {/* <div className="card-image">
+      <div className="card is-hidden-touch">
+        <div className="card-image">
           <figure className="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder" />
+            <img src="https://cn.bing.com/az/hprichbg/rb/MendenhalLake_EN-CN8702202262_1920x1080.jpg" alt="Placeholder" />
           </figure>
-        </div> */}
+        </div>
         <div className="card-content">
           <div className="media">
             <div className="media-left">
               <figure className="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder" />
+                <img src="https://avatars2.githubusercontent.com/u/19683924?s=460&v=4" alt="Placeholder" />
               </figure>
             </div>
             <div className="media-content">
-              <p className="title is-4">John Smith</p>
-              <p className="subtitle is-6">@johnsmith</p>
+              <p className="title is-4">Jonas</p>
+              <p className="subtitle is-6"><i className="czs-location-l"></i>Shanghai China</p>
             </div>
           </div>
 
           <div className="content">
-            Lorem ipsum dolor sit amet, 
-            {/* consectetur adipiscing elit. */}
-            {/* Phasellus nec iaculis mauris. <a href="javascript:void(0)">@bulmaio</a>.
-            <a href="javascript:void(0)">#css</a> <a href="javascript:void(0)">#responsive</a> */}
-            <br/>
-            <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            I'm not looking for somebody<br />
+            With some superhuman gifts<br />
+            Some superhero,Some fairytale bliss <br />
+            Just something I can turn to
+            <br />
           </div>
+          <nav className="level is-mobile">
+              <div className="level-left">
+                <a className="level-item" rel="noopener noreferrer" target="_blank" href="https://github.com/liweili50" aria-label="reply">
+                  <span className="icon has-text-dark">
+                    <i className="czs-github-logo" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a className="level-item" rel="noopener noreferrer" target="_blank" href="https://www.zhihu.com/people/li-wei-Jonas/activities" aria-label="retweet">
+                  <span className="icon has-text-dark">
+                    <i className="czs-zhihu fas fa-lg" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a className="level-item" target="_blank" href="https://weibo.com/u/2529890461" rel="noopener noreferrer" aria-label="like">
+                  <span className="icon has-text-dark">
+                    <i className="czs-weibo" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a className="level-item has-text-dark" href="mailto:liweili50@163.com"  rel="noopener noreferrer" aria-label="like">
+                  <span className="icon">
+                    <i className="czs-message-l" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </div>
+            </nav>
         </div>
       </div>
     );
