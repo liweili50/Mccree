@@ -1,3 +1,6 @@
 .card {
   flex-direction: row;
 }
+.is-size-09 {
+  font-size: 0.9rem;
+}

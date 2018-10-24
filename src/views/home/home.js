@@ -3,6 +3,10 @@ import './home.css';
 import Article from '../../components/article/article'
 import Card from '../../components/card/card'
 
+import {
+  Route,
+} from 'react-router-dom';
+
 class Home extends Component {
   render() {
     return (
@@ -10,8 +14,9 @@ class Home extends Component {
         <div className="container">
           <div className="columns is-desktop">
             <div className="column">
-              <Article />
-              <Article />
+              <Route exact path="/" component={Article}  />
+              <Route exact path="/home" component={Article}  />
+              <Route exact  path="/contact" component={Article}  />
             </div>
             <div className="column is-narrow is-narrow-fullhd">
               <Card />

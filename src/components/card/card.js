@@ -23,12 +23,11 @@ class Card extends Component {
             </div>
           </div>
 
-          <div className="content">
+          <div className="content is-size-09">
             I'm not looking for somebody<br />
             With some superhuman gifts<br />
-            Some superhero,Some fairytale bliss <br />
+            Some superhero,Some fairytale bliss<br />
             Just something I can turn to
-            <br />
           </div>
           <nav className="level is-mobile">
               <div className="level-left">

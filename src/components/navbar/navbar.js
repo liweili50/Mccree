@@ -37,10 +37,10 @@ class Navbar extends Component {
                 <div className="navbar-item">
                   <div className="buttons">
                     <a className="button is-primary">
-                      <strong>注册</strong>
+                      <strong>登录</strong>
                     </a>
                     <a className="button is-light">
-                      登录
+                      注册
                     </a>
                   </div>
                 </div>
