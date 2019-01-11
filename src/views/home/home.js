@@ -8,6 +8,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      hasMore: false,
       articleList: [
         {
           id: "1",
@@ -56,9 +57,9 @@ class Home extends Component {
               <InfiniteScroll
                 pageStart={0}
                 loadMore={this.loadMore}
-                hasMore={true || false}
+                hasMore={this.state.hasMore}
                 loader={
-                  <div className="loader" key={0}>
+                  <div key={0}>
                     Loading ...
                   </div>
                 }
