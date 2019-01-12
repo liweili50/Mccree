@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
 import './card.css';
+import {getBackgroundImg} from '../../api/user'
 
 class Card extends Component {
+  constructor() {
+    super()
+    this.state={
+      url: ''
+    }
+  }
+  componentDidMount() {
+    getBackgroundImg().then(data=>{
+      this.setState({
+        url: data.data.imgUrl
+      })
+    })
+  }
   render() {
     return (
       <div className="card is-hidden-touch">
         <div className="card-image">
           <figure className="image is-4by3">
-            <img src="https://cn.bing.com/az/hprichbg/rb/MendenhalLake_EN-CN8702202262_1920x1080.jpg" alt="Placeholder" />
+            <img src={this.state.url} alt="Placeholder" />
           </figure>
         </div>
         <div className="card-content">
