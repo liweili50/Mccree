@@ -52,7 +52,7 @@ class Home extends Component {
     return (
       <div className="section is-body is-mobile">
         <div className="container">
-          <div className="columns is-desktop">
+          <div className="columns">
             <div className="column">
               <InfiniteScroll
                 pageStart={0}
@@ -67,7 +67,7 @@ class Home extends Component {
                 {list}
               </InfiniteScroll>
             </div>
-            <div className="column is-narrow is-narrow-fullhd">
+            <div className="column is-narrow is-narrow-fullhd is-hidden-touch">
               <Card />
             </div>
           </div>

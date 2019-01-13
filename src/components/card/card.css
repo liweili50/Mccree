@@ -4,3 +4,6 @@
 .is-size-09 {
   font-size: 0.9rem;
 }
+.card-image{
+  cursor: pointer;
+}

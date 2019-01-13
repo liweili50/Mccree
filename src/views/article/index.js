@@ -19,8 +19,10 @@ class Article extends Component {
   render() {
     return (
       <div className="section is-body is-mobile">
+      <div className="container">
         文章详情
         <div id="comments" />
+        </div>
       </div>
     );
   }

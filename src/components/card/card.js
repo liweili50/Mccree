@@ -8,6 +8,10 @@ class Card extends Component {
     this.state={
       url: ''
     }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick() {
+    window.open("http://www.bing.com")
   }
   componentDidMount() {
     getBackgroundImg().then(data=>{
@@ -18,10 +22,10 @@ class Card extends Component {
   }
   render() {
     return (
-      <div className="card is-hidden-touch">
-        <div className="card-image">
+      <div className="card">
+        <div onClick={this.handleClick} className="card-image">
           <figure className="image is-4by3">
-            <img src={this.state.url} alt="Placeholder" />
+            <img src={this.state.url} title="查看高清大图" alt="必应每日图片" />
           </figure>
         </div>
         <div className="card-content">
