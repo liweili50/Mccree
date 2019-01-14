@@ -11,7 +11,7 @@ function Article(props) {
   return (
     <section className="article has-background-white">
       <div className="article-body">
-        <h1 className="title is-3">{props.article.title}</h1>
+        <h1 className="title is-4">{props.article.title}</h1>
         <div className="subtitle is-6">
           {props.article.creatTime} {props.article.archive}
         </div>

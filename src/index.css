@@ -1,4 +1,7 @@
-/* body {
-  margin: 0;
-  padding: 0;
-} */
+
+@media screen and (min-width: 1472px){
+  .container {
+    max-width: 1344px;
+    width: 1152px;
+  }
+}

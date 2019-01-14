@@ -20,7 +20,7 @@ let arr = [
   },
   {
     createTime: '2019 - 01 - 14',
-    updataTime:'2019 - 01 - 14',
+    updataTime: '2019 - 01 - 14',
     content:
       '<h1 id="">两数之和</h1>\n<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>\n<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>\n<p>示例:\n给定 nums = [2, 7, 11, 15], target = 9</p>\n<p>因为 nums[0] + nums[1] = 2 + 7 = 9\n所以返回 [0, 1]</p>\n<h2 id="-1">答案一：</h2>\n<pre><code class="javascript language-javascript">/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number[]}\n */\n\nfunction twoSum(nums, target) {\n    for (let i = 0; i &lt; nums.length; i++) {\n        for (let j = i + 1; j &lt; nums.length; j++) {\n            if (nums[j] == target - nums[i]) {\n                return [i, j]\n            }\n        }\n    }\n    throw new error("No two sum solution");\n}\n</code></pre>\n<h3 id="-2">复杂度分析：</h3>\n<ul>\n<li><p>时间复杂度：O(n^2)， 对于每个元素，我们试图通过遍历数组的其余部分来寻找它所对应的目标元素，这将耗费 O(n) 的时间。因此时间复杂度为 O(n^2)</p></li>\n<li><p>空间复杂度：O(1)</p></li>\n</ul>\n<h2 id="-3">答案二：</h2>\n<pre><code class="javascript language-javascript">/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number[]}\n */\n\nvar twoSum = function(nums, target) {\n    let obj = {};\n    let arr = [];\n    for (let i = 0; i &lt; nums.length; i++) {\n        let element = target - nums[i];\n        if (nums[i] in obj) {\n            arr.push(obj[nums[i]]);\n            arr.push(i);\n            return arr;\n        } else {\n            obj[element] = i;\n        }\n    }\n};\n</code></pre>\n<h3 id="-4">复杂度分析：</h3>\n<ul>\n<li><p>时间复杂度：O(n)， 我们只遍历了包含有 n 个元素的列表一次。在表中进行的每次查找只花费 O(1)的时间。</p></li>\n<li><p>空间复杂度：O(n)， 所需的额外空间取决于哈希表中存储的元素数量，该表最多需要存储 n 个元素</p></li>\n</ul>'
   }
@@ -38,15 +38,18 @@ class Article extends Component {
       }
     });
     gitment.render("comments");
-    document.getElementById('content').innerHTML=arr[1].content;
+    document.getElementById('content').innerHTML = arr[this.props.match.params.id - 1].content;
   }
   render() {
     return (
       <div className="section is-body is-mobile">
-        <div id="content" className="container markdown-body has-background-white">
+        <div className="container has-background-white">
+          <div id="content" className="markdown-body">
+          </div>
+          <hr></hr>
+          <div id="comments">
+          </div>
         </div>
-        
-        <div id="comments" />
       </div>
     );
   }
