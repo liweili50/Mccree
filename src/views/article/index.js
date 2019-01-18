@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import { findDOMNode } from 'react-dom';
+import ReactDOM from 'react-dom';
+
 import "github-markdown-css/github-markdown.css";
 import "./index.css";
 
 import "gitment/style/default.css";
 import Gitment from "gitment";
+
+import ImgBox from '../../components/imageBox/index'
 
 let arr = [
   {
@@ -37,7 +42,7 @@ class Article extends Component {
   }
   componentDidMount() {
     const gitment = new Gitment({
-      id: "1", // optional
+      id: this.props.match.params.id, // optional
       owner: "liweili50",
       repo: "blog-resource",
       oauth: {
@@ -53,21 +58,26 @@ class Article extends Component {
     document.getElementById("content").removeEventListener('click',this.show)
   }
   show(event) {
+    // let ImgBox = function(props) {
+    //   return (
+    //     <div id="imgBox">
+    //       <div className="zoomIn">
+    //       {/* <img alt="markdown img" src={props.imgUrl} /> */}
+    //     </div>
+    //     </div>
+    //   );
+    // };
     if (event.target.tagName === "IMG") {
-      this.setState({
-        isHidden: false,
-        imgUrl: event.target.src
-      });
+      // this.setState({
+      //   isHidden: false,
+      //   imgUrl: event.target.src
+      // });
+      // console.log(React.render(ImgBox))
+      // findDOMNode(this).appendChild()
+      // ReactDOM.render(<ImgBox></ImgBox>,findDOMNode(this))
     }
   }
   render() {
-    let ImgBox = function(props) {
-      return (
-        <div id="imgBox">
-          <img alt="markdown img" src={props.imgUrl} />
-        </div>
-      );
-    };
     return (
       <div className="section is-body is-mobile">
         <div className="container has-background-white">
@@ -75,7 +85,8 @@ class Article extends Component {
           <hr />
           <div id="comments" />
         </div>
-        {this.state.isHidden === false && <ImgBox imgUrl={this.state.imgUrl} />}
+        {/* {this.state.isHidden === false && <ImgBox imgUrl={this.state.imgUrl} />} */}
+        <ImgBox imgUrl={this.state.imgUrl}></ImgBox>
       </div>
     );
   }
