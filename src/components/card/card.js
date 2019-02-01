@@ -51,22 +51,22 @@ class Card extends Component {
               <div className="level-left">
                 <a className="level-item" rel="noopener noreferrer" target="_blank" href="https://github.com/liweili50" aria-label="reply">
                   <span className="icon has-text-dark">
-                    <i className="czs-github-logo" aria-hidden="true"></i>
+                    <i title="github" className="czs-github-logo" aria-hidden="true"></i>
                   </span>
                 </a>
                 <a className="level-item" rel="noopener noreferrer" target="_blank" href="https://www.zhihu.com/people/li-wei-Jonas/activities" aria-label="retweet">
                   <span className="icon has-text-dark">
-                    <i className="czs-zhihu fas fa-lg" aria-hidden="true"></i>
+                    <i title="知乎" className="czs-zhihu fas fa-lg" aria-hidden="true"></i>
                   </span>
                 </a>
                 <a className="level-item" target="_blank" href="https://weibo.com/u/2529890461" rel="noopener noreferrer" aria-label="like">
                   <span className="icon has-text-dark">
-                    <i className="czs-weibo" aria-hidden="true"></i>
+                    <i title="微博" className="czs-weibo" aria-hidden="true"></i>
                   </span>
                 </a>
                 <a className="level-item has-text-dark" href="mailto:liweili50@163.com"  rel="noopener noreferrer" aria-label="like">
                   <span className="icon">
-                    <i className="czs-message-l" aria-hidden="true"></i>
+                    <i title="邮箱" className="czs-message-l" aria-hidden="true"></i>
                   </span>
                 </a>
               </div>

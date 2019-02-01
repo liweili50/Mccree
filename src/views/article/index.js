@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-// import { findDOMNode } from 'react-dom';
-// import ReactDOM from 'react-dom';
 import 'viewerjs/dist/viewer.css';
 import Viewer from 'viewerjs';
-
 import "github-markdown-css/github-markdown.css";
 import "./index.css";
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
-import cogoToast from 'cogo-toast';
+import { message } from 'antd';
 import './navbar.css';
 class Navbar extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Navbar extends Component {
     this.setState({ isCollapse: !this.state.isCollapse });
   }
   register() {
-    cogoToast.info('暂未开放注册！敬请期待！')
+    message.info('暂未开放注册！敬请期待！');
   }
   render() {
     const isCollapse = this.state.isCollapse;
@@ -34,7 +34,7 @@ class Navbar extends Component {
             <div id="navbarExampleTransparentExample" className={`navbar-menu  ${isCollapse ? 'is-active' : ''}`} >
               <div className="navbar-start">
                 <NavLink to="/home" className="navbar-item" activeClassName="is-active">首页</NavLink>
-                <NavLink to="/archive" className="navbar-item" activeClassName="is-active">分类</NavLink>
+                <NavLink to="/archive" className="navbar-item" activeClassName="is-active">归档</NavLink>
                 <NavLink to="/marks" className="navbar-item" activeClassName="is-active">书签</NavLink>
                 <NavLink to="/about" className="navbar-item" activeClassName="is-active">关于</NavLink>
               </div>
@@ -42,9 +42,9 @@ class Navbar extends Component {
                 <div className="navbar-item">
                   <div className="buttons">
                     <NavLink to="/login" className="button is-primary" activeClassName="is-active"><strong>登录</strong></NavLink>
-                    <a onClick={this.register} className="button is-light">
+                    <span onClick={this.register} className="button is-light">
                       注册
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>

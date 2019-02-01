@@ -7,7 +7,6 @@
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",
     "bulma": "^0.7.1",
-    "cogo-toast": "^1.0.4",
     "customize-cra": "^0.2.11",
     "github-markdown-css": "^2.10.0",
     "gitment": "0.0.3",

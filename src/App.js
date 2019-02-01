@@ -10,6 +10,7 @@ import {
 
 import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
+import Suspension from './components/suspension/index';
 
 import Home from './views/home/home';
 import Archive from './views/archive/index';
@@ -36,6 +37,7 @@ class App extends Component {
             <Route exact path="/article/:id" component={Article} />
             <Route component={NoMatch} />
           </Switch>
+          <Suspension />
           <Footer />
         </div>
       </Router>
