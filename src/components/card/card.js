@@ -16,7 +16,7 @@ class Card extends Component {
   componentDidMount() {
     getBackgroundImg().then(data=>{
       this.setState({
-        url: data.data.imgUrl
+        url:'https://cn.bing.com/' +data.data.resultData.images[0].url
       })
     })
   }
