@@ -21,37 +21,35 @@ const About = function() {
 const NoMatch = function() {
   return <h1>404</h1>;
 };
-const Layout = function(props) {
-  console.log(props)
+
+function PrivateRoute({ component: Component, ...rest }) {
   return (
     <div className="app-container has-background-light">
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/archive" component={Archive} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/article/:id" component={Article} />
-        <Route exact path="/tag/:id" component={Tag} />
-      </Switch>
-      <Suspension />
-      <Footer />
-    </div>
+    <Navbar />
+    <Route
+      {...rest}
+      render={props =>
+        (
+          <Component {...props} />
+        ) 
+      }
+    />
+    <Suspension />
+    <Footer />
+  </div>
   );
-};
+}
 class PrimaryLayout extends Component {
   render() {
     return (
       <Switch>
-        {/* <Route exact path="/" component={Layout} />
-        <Route exact path="/home" component={Layout} />
-        <Route exact path="/archive" component={Layout} />
-        <Route exact path="/about" component={Layout} />
-        <Route exact path="/login" component={Layout} />
-        <Route exact path="/article/:id" component={Layout} />
-        <Route exact path="/tag/:id" component={Layout} /> */}
-        <Layout path="/" />
+        <PrivateRoute exact path="/" component={Home} />
+        <PrivateRoute exact path="/home" component={Home} />
+        <PrivateRoute exact path="/archive" component={Archive} />
+        <PrivateRoute exact path="/about" component={About} />
+        <PrivateRoute exact path="/login" component={Login} />
+        <PrivateRoute exact path="/article/:id" component={Article} />
+        <PrivateRoute exact path="/tag/:id" component={Tag} />
         <Route exact path="/feedback" component={Feedback} />
         <Route component={NoMatch} />
       </Switch>
