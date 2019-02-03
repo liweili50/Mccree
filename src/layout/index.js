@@ -13,6 +13,8 @@ import Home from "../views/home/home";
 import Archive from "../views/archive/index";
 import Login from "../views/login/index";
 import Article from "../views/article/index";
+import Feedback from "../views/feedback/index";
+import Tag from "../views/tag/index";
 const About = function() {
   return <h1>about me</h1>;
 };
@@ -25,12 +27,13 @@ const Layout = function(props) {
     <div className="app-container has-background-light">
       <Navbar />
       <Switch>
-        <Route exact  path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/archive" component={Archive} />
         <Route exact path="/about" component={About} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/article/:id" component={Article} />
+        <Route exact path="/tag/:id" component={Tag} />
       </Switch>
       <Suspension />
       <Footer />
@@ -41,13 +44,15 @@ class PrimaryLayout extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={Layout} />
+        {/* <Route exact path="/" component={Layout} />
         <Route exact path="/home" component={Layout} />
         <Route exact path="/archive" component={Layout} />
         <Route exact path="/about" component={Layout} />
         <Route exact path="/login" component={Layout} />
         <Route exact path="/article/:id" component={Layout} />
-        <Route exact path="/aa" component={About} />
+        <Route exact path="/tag/:id" component={Layout} /> */}
+        <Layout path="/" />
+        <Route exact path="/feedback" component={Feedback} />
         <Route component={NoMatch} />
       </Switch>
     );

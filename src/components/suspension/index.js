@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BackTop } from "antd";
 import "./index.css";
-
+import { Link } from "react-router-dom";
 class Suspension extends Component {
   render() {
     return (
@@ -12,9 +12,13 @@ class Suspension extends Component {
           </span>
         </BackTop>
         <div className="btn">
-          <span className="icon has-text-primary">
+          <Link
+            to="/feedback"
+            target="_blank"
+            className="icon has-text-primary"
+          >
             <i title="建议反馈" className="czs-comment-l" aria-hidden="true" />
-          </span>
+          </Link>
         </div>
       </div>
     );

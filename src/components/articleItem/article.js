@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function Article(props) {
   const tagItems = props.article.tags.map((tag, index) => (
-    <span key={index} className="tag">
-      {tag}
-    </span>
+    <Link to={'/tag/'+tag} key={index} className="tag">
+      #{tag}
+    </Link>
   ));
   return (
     <section className="article has-background-white">
