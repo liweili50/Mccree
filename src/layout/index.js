@@ -15,11 +15,9 @@ import Login from "../views/login/index";
 import Article from "../views/article/index";
 import Feedback from "../views/feedback/index";
 import Tag from "../views/tag/index";
+import NoMatch from "../views/noMatch/index";
 const About = function() {
   return <h1>about me</h1>;
-};
-const NoMatch = function() {
-  return <h1>404</h1>;
 };
 
 function PrivateRoute({ component: Component, ...rest }) {
