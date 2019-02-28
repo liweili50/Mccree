@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import 'viewerjs/dist/viewer.css';
-import Viewer from 'viewerjs';
+import "viewerjs/dist/viewer.css";
+import Viewer from "viewerjs";
 import "github-markdown-css/github-markdown.css";
 import "./index.css";
 
@@ -35,7 +35,7 @@ class Article extends Component {
       isHidden: true,
       imgUrl: ""
     };
-    this.show = this.show.bind(this)
+    this.show = this.show.bind(this);
   }
   componentDidMount() {
     const gitment = new Gitment({
@@ -48,10 +48,10 @@ class Article extends Component {
       }
     });
     gitment.render("comments");
-    document.getElementById("content").addEventListener("click",this.show)
+    document.getElementById("content").addEventListener("click", this.show);
   }
   componentWillUnmount() {
-    document.getElementById("content").removeEventListener('click',this.show)
+    document.getElementById("content").removeEventListener("click", this.show);
   }
   show(event) {
     if (event.target.tagName === "IMG") {
@@ -60,12 +60,12 @@ class Article extends Component {
       // var galley = document.getElementById('content');
       var viewer = new Viewer(image, {
         movable: false,
-        zoomable:false,
-        title:false,
-        navbar:false,
-        hidden: function () {
+        zoomable: false,
+        title: false,
+        navbar: false,
+        hidden: function() {
           viewer.destroy();
-        },
+        }
       });
       viewer.show();
     }
@@ -74,7 +74,25 @@ class Article extends Component {
     return (
       <div className="section is-body is-mobile">
         <div className="container has-background-white">
-          <div id="content" className="markdown-body" dangerouslySetInnerHTML = {{ __html: arr[this.props.match.params.id - 1].content }}  />
+          <h1 className="subtitle has-text-centered is-3">
+            重新认识构造函数、原型和原型链
+          </h1>
+          <div>
+            <figure className="image is-64x64">
+              <img
+                className="is-rounded"
+                src="https://bulma.io/images/placeholders/128x128.png"
+                alt="avtar"
+              />
+            </figure>
+          </div>
+          <div
+            id="content"
+            className="markdown-body"
+            dangerouslySetInnerHTML={{
+              __html: arr[this.props.match.params.id - 1].content
+            }}
+          />
           <hr />
           <div id="comments" />
         </div>
