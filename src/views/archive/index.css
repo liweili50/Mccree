@@ -1,0 +1,30 @@
+
+ .archive-content {
+     padding: 60px;
+ }
+
+ .archive-item li {
+    border-bottom: 2px solid whitesmoke;
+    padding: 0 50px;
+ }
+ .archive-content  .is-size-4 {
+    padding: 0 50px;
+ }
+
+.archive-item {
+    line-height: 3.2rem;
+}
+.archive-content>ul>li{
+    padding: 0 60px;
+    margin: 20px 0;
+    /* cursor: pointer; */
+}
+.archive-content>ul>li .icon {
+    margin-right: 10px;
+}
+.archive-content>ul>li .icon i {
+    font-size: 0.6rem;
+}
+.archive-item li span:nth-child(2) {
+    margin-right: 40px;
+}
