@@ -74,7 +74,7 @@ class Article extends Component {
     return (
       <div className="section is-body is-mobile">
         <div className="container has-background-white">
-          <h1 className="subtitle has-text-centered is-3">
+          <h1 className="title has-text-centered is-3">
             重新认识构造函数、原型和原型链
           </h1>
           <div>

@@ -35,7 +35,7 @@ class Navbar extends Component {
               <div className="navbar-start">
                 <NavLink to="/home" className="navbar-item" activeClassName="is-active">首页</NavLink>
                 <NavLink to="/archive" className="navbar-item" activeClassName="is-active">归档</NavLink>
-                <NavLink to="/marks" className="navbar-item" activeClassName="is-active">书签</NavLink>
+                <NavLink to="/tags" className="navbar-item" activeClassName="is-active">标签</NavLink>
                 <NavLink to="/about" className="navbar-item" activeClassName="is-active">关于</NavLink>
               </div>
               <div className="navbar-end">

@@ -14,6 +14,7 @@ import Archive from "../views/archive/index";
 import Login from "../views/login/index";
 import Article from "../views/article/index";
 import Feedback from "../views/feedback/index";
+import Tags from "../views/tags/index";
 import Tag from "../views/tag/index";
 import NoMatch from "../views/noMatch/index";
 const About = function() {
@@ -47,7 +48,8 @@ class PrimaryLayout extends Component {
         <PrivateRoute exact path="/about" component={About} />
         <PrivateRoute exact path="/login" component={Login} />
         <PrivateRoute exact path="/article/:id" component={Article} />
-        <PrivateRoute exact path="/tag/:id" component={Tag} />
+        <PrivateRoute exact path="/Tags" component={Tags} />
+        <PrivateRoute exact path="/tags/:id" component={Tag} />
         <Route exact path="/feedback" component={Feedback} />
         <Route component={NoMatch} />
       </Switch>

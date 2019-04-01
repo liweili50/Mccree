@@ -1,0 +1,12 @@
+.tags-container {
+    text-align: center;
+    background-color: white;
+}
+
+.tags {
+    margin: 3rem;
+    padding-bottom: 2rem;
+}
+.tag {
+    margin: 1rem;
+}

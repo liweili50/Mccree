@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Article(props) {
   const tagItems = props.article.tags.map((tag, index) => (
-    <Link to={'/tag/'+tag} key={index} className="tag">
+    <Link to={'/tags/'+tag} key={index} className="tag">
       #{tag}
     </Link>
   ));

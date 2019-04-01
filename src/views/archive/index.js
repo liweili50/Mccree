@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DocumentTitle from "react-document-title";
+// import { Pagination } from 'antd';
 import "./index.css";
 
 class Footer extends Component {
@@ -8,7 +9,6 @@ class Footer extends Component {
       <DocumentTitle title="归档">
         <div className="section is-body is-mobile">
           <div className="container archive-content has-background-white">
-            {/* <aside className="menu"> */}
             <ul className="">
               <li>
                 <h5 className="is-size-4">2018</h5>
@@ -103,7 +103,7 @@ class Footer extends Component {
                 </ul>
               </li>
             </ul>
-            {/* </aside> */}
+            {/* <Pagination defaultCurrent={1} total={50} /> */}
           </div>
         </div>
       </DocumentTitle>
