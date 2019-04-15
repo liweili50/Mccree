@@ -1,12 +1,18 @@
 import React, { Component } from "react";
+// import { Link } from "react-router-dom";
 import './index.css'
 
+// const tagItems = props.article.tags.map((tag, index) => (
+//   <Link to={'/tags/'+tag} key={index} className="tag">
+//     #{tag}
+//   </Link>
+// ));
 class Tags extends Component {
   render() {
     return (
       <div className="section is-body is-mobile">
         <div className="container tags-container">
-        <div>
+        <div className="tags-info">
             <h3>全部标签</h3>
             <p>目前共计59个标签</p>
         </div>
