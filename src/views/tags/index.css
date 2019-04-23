@@ -3,10 +3,12 @@
     background-color: white;
 }
 
-.tags {
-    margin: 3rem;
-    padding-bottom: 2rem;
+.tags-container .tags {
+    padding: 2rem;
 }
-.tag {
+.tags-container .tag {
     margin: 1rem;
+}
+.tags-info {
+    padding-top: 20px;
 }
