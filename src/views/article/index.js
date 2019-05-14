@@ -73,8 +73,8 @@ class Article extends Component {
   render() {
     return (
       <div className="section is-body is-mobile">
-        <div className="container has-background-white">
-          <h1 className="title has-text-centered is-3">
+        <div className="container article-container has-background-white">
+          <h1 className="title is-3">
             重新认识构造函数、原型和原型链
           </h1>
           <div>

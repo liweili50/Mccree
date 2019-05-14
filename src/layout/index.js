@@ -18,7 +18,7 @@ import Tags from "../views/tags/index";
 import Tag from "../views/tag/index";
 import NoMatch from "../views/noMatch/index";
 const About = function() {
-  return <h1>about me</h1>;
+  return<div className="section is-body is-mobile"></div>
 };
 
 function PrivateRoute({ component: Component, ...rest }) {

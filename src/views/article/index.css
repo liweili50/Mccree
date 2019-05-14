@@ -1,9 +1,11 @@
+.article-container {
+    padding: 3rem;
+}
 
 .markdown-body,#comments {
     box-sizing: border-box;
     min-width: 200px;
     margin: 0 auto;
-    padding: 45px;
 }
 
 .markdown-body img {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const service = axios.create({
-//   baseURL: 'http://127.0.0.1:8088/',
+  baseURL: '/api',
   timeout: 5000
 })
 // 添加请求拦截器
