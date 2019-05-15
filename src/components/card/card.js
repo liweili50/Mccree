@@ -42,7 +42,7 @@ class Card extends Component {
           </div>
 
           <div className="content is-size-07">
-            How could I try to explain? <br />
+            How could I try to explain <br />
             When I do,it turns away again <br />
             And it's always been the same <br />
             Same old story
