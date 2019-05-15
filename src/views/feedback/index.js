@@ -11,17 +11,17 @@ class Feedback extends Component {
               <input
                 className="input"
                 type="text"
-                placeholder="e.g Alex Smith"
+                placeholder="您的名字"
               />
             </div>
           </div>
 
           <div className="field">
-            <label className="label">Email</label>
+            <label className="label">Problem</label>
             <div className="control">
               <textarea
                 className="textarea"
-                placeholder="Explain how we can help you"
+                placeholder="有什么问题请给我留言"
               />
             </div>
           </div>

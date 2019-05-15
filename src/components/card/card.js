@@ -41,11 +41,11 @@ class Card extends Component {
             </div>
           </div>
 
-          <div className="content is-size-09">
-            I'm not looking for somebody<br />
-            With some superhuman gifts<br />
-            Some superhero,Some fairytale bliss<br />
-            Just something I can turn to
+          <div className="content is-size-07">
+            How could I try to explain? <br />
+            When I do,it turns away again <br />
+            And it's always been the same <br />
+            Same old story
           </div>
           <nav className="level is-mobile">
               <div className="level-left">
