@@ -24,7 +24,7 @@ class Card extends Component {
     return (
       <div className="card">
         <div onClick={this.handleClick} className="card-image">
-          <figure className="image is-4by3">
+          <figure className="image is-3by2">
             <img src={this.state.url} title="查看必应美图" alt="必应每日图片" />
           </figure>
         </div>

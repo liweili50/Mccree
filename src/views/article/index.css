@@ -1,9 +1,6 @@
 .article-container {
     padding: 3rem;
 }
-/* .article-container h1{
-    text-align: center;
-} */
 .media-content h5 {
     font-weight: 600;
     font-size: 18px;
@@ -20,8 +17,3 @@
     cursor: zoom-in;
 }
 
-/* @media (max-width: 767px) {
-    .markdown-body, #comments{
-        padding: 15px;
-    }
-} */

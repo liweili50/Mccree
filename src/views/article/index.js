@@ -4,8 +4,8 @@ import Viewer from "viewerjs";
 import "github-markdown-css/github-markdown.css";
 import "./index.css";
 
-import "gitment/style/default.css";
-import Gitment from "gitment";
+import 'gitalk/dist/gitalk.css'
+import Gitalk from 'gitalk'
 
 let arr = [
   {
@@ -38,16 +38,17 @@ class Article extends Component {
     this.show = this.show.bind(this);
   }
   componentDidMount() {
-    const gitment = new Gitment({
-      id: this.props.match.params.id, // optional
-      owner: "liweili50",
-      repo: "blog-resource",
-      oauth: {
-        client_id: "455057ff16e070218483",
-        client_secret: "1dcb080f82e4958655c4feb5bebf11310ca6face"
-      }
-    });
-    gitment.render("comments");
+    const gitalk = new Gitalk({
+      clientID: '455057ff16e070218483',
+      clientSecret: '1dcb080f82e4958655c4feb5bebf11310ca6face',
+      repo: 'blog-resource',
+      owner: 'liweili50',
+      admin: ['liweili50'],
+      id: this.props.match.params.id,      // Ensure uniqueness and length less than 50
+      distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+     
+    gitalk.render('comments')
     document.getElementById("content").addEventListener("click", this.show);
   }
   componentWillUnmount() {
@@ -75,18 +76,8 @@ class Article extends Component {
       <div className="section is-body is-mobile">
         <div className="container article-container has-background-white">
           <h1 className="subtitle is-3">重新认识构造函数、原型和原型链</h1>
-          <div className="media">
-            <figure className="media-left image is-48x48">
-              <img
-                className="is-rounded"
-                src="https://avatars2.githubusercontent.com/u/19683924?s=460&v=4"
-                alt="avtar"
-              />
-            </figure>
-            <div className="media-content">
-              <h5>jonas</h5>
-              <p>2019年05月09日 阅读 25316</p>
-            </div>
+          <div className="media-content">
+            <p>2019年05月09日 阅读 25316</p>
           </div>
           <div
             id="content"

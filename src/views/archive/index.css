@@ -1,29 +1,24 @@
 
- .archive-content {
-     padding: 60px;
+ .archive-wrap {
+    padding: 3rem;
+ }
+ .archive-wrap>li{
+     width: 90%;
+     margin: 0 auto;
+     padding-bottom: 1.5rem;
  }
 
- .archive-item li {
+ .archive-list li {
     border-bottom: 2px solid whitesmoke;
-    padding: 0 50px;
+    cursor: pointer;
+    padding: 1rem 0;
  }
- .archive-content  .is-size-4 {
-    padding: 0 50px;
- }
-
-.archive-item {
-    line-height: 3.2rem;
-}
-.archive-content>ul>li{
-    padding: 0 60px;
-    margin: 20px 0;
-}
-.archive-content>ul>li .icon {
+ .archive-list li  .icon {
     margin-right: 10px;
 }
-.archive-content>ul>li .icon i {
+.archive-list li .icon i {
     font-size: 0.6rem;
 }
-.archive-item li span:nth-child(2) {
+.archive-list li span:nth-child(2) {
     margin-right: 40px;
 }

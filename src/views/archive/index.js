@@ -8,15 +8,14 @@ class Footer extends Component {
     return (
       <DocumentTitle title="归档">
         <div className="section is-body is-mobile">
-          <div className="container archive-content has-background-white">
-            <ul className="">
+          <div className="container has-background-white">
+            <ul className="archive-wrap">
               <li>
                 <h5 className="is-size-4">2018</h5>
-                <ul className="archive-item">
+                <ul className="archive-list">
                   <li>
                     <span className="icon">
                       <i
-                        title="邮箱"
                         className="czs-square-o"
                         aria-hidden="true"
                       />
@@ -27,7 +26,6 @@ class Footer extends Component {
                   <li>
                   <span className="icon">
                       <i
-                        title="邮箱"
                         className="czs-square-o"
                         aria-hidden="true"
                       />
@@ -38,7 +36,6 @@ class Footer extends Component {
                   <li>
                   <span className="icon">
                       <i
-                        title="邮箱"
                         className="czs-square-o"
                         aria-hidden="true"
                       />
@@ -50,11 +47,10 @@ class Footer extends Component {
               </li>
               <li>
                 <h5 className="is-size-4">2017</h5>
-                <ul className="archive-item">
+                <ul className="archive-list">
                   <li>
                   <span className="icon">
                       <i
-                        title="邮箱"
                         className="czs-square-o"
                         aria-hidden="true"
                       />
@@ -65,7 +61,6 @@ class Footer extends Component {
                   <li>
                   <span className="icon">
                       <i
-                        title="邮箱"
                         className="czs-square-o"
                         aria-hidden="true"
                       />
@@ -76,7 +71,6 @@ class Footer extends Component {
                   <li>
                   <span className="icon">
                       <i
-                        title="邮箱"
                         className="czs-square-o"
                         aria-hidden="true"
                       />
@@ -88,11 +82,10 @@ class Footer extends Component {
               </li>
               <li>
                 <h5 className="is-size-4">2016</h5>
-                <ul className="archive-item">
+                <ul className="archive-list">
                   <li>
                   <span className="icon">
                       <i
-                        title="邮箱"
                         className="czs-square-o"
                         aria-hidden="true"
                       />
