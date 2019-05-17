@@ -7,11 +7,14 @@
      margin: 0 auto;
      padding-bottom: 1.5rem;
  }
+ .archive-wrap .is-size-4 {
+     margin-left: 3rem;
+ }
 
  .archive-list li {
     border-bottom: 2px solid whitesmoke;
     cursor: pointer;
-    padding: 1rem 0;
+    padding: 1rem 3rem;
  }
  .archive-list li  .icon {
     margin-right: 10px;

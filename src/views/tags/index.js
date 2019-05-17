@@ -16,27 +16,27 @@ class Tags extends Component {
             <h3>全部标签</h3>
             <p>目前共计59个标签</p>
         </div>
-          <div class="tags are-medium">
-            <span class="tag">One</span>
-            <span class="tag">Two</span>
-            <span class="tag">Three</span>
-            <span class="tag">Four</span>
-            <span class="tag">Five</span>
-            <span class="tag">Six</span>
-            <span class="tag">Seven</span>
-            <span class="tag">Eight</span>
-            <span class="tag">Nine</span>
-            <span class="tag">Ten</span>
-            <span class="tag">Eleven</span>
-            <span class="tag">Twelve</span>
-            <span class="tag">Thirteen</span>
-            <span class="tag">Fourteen</span>
-            <span class="tag">Fifteen</span>
-            <span class="tag">Sixteen</span>
-            <span class="tag">Seventeen</span>
-            <span class="tag">Eighteen</span>
-            <span class="tag">Nineteen</span>
-            <span class="tag">Twenty</span>
+          <div className="tags are-medium">
+            <span className="tag">One</span>
+            <span className="tag">Two</span>
+            <span className="tag">Three</span>
+            <span className="tag">Four</span>
+            <span className="tag">Five</span>
+            <span className="tag">Six</span>
+            <span className="tag">Seven</span>
+            <span className="tag">Eight</span>
+            <span className="tag">Nine</span>
+            <span className="tag">Ten</span>
+            <span className="tag">Eleven</span>
+            <span className="tag">Twelve</span>
+            <span className="tag">Thirteen</span>
+            <span className="tag">Fourteen</span>
+            <span className="tag">Fifteen</span>
+            <span className="tag">Sixteen</span>
+            <span className="tag">Seventeen</span>
+            <span className="tag">Eighteen</span>
+            <span className="tag">Nineteen</span>
+            <span className="tag">Twenty</span>
           </div>
         </div>
       </div>
