@@ -47,9 +47,10 @@ class Article extends Component {
       id: this.props.match.params.id,      // Ensure uniqueness and length less than 50
       distractionFreeMode: true  // Facebook-like distraction free mode
     })
-     
+
     gitalk.render('comments')
     document.getElementById("content").addEventListener("click", this.show);
+    window.scrollTo(0, 0);
   }
   componentWillUnmount() {
     document.getElementById("content").removeEventListener("click", this.show);
@@ -75,7 +76,7 @@ class Article extends Component {
     return (
       <div className="section is-body is-mobile">
         <div className="container article-container has-background-white">
-          <h1 className="subtitle is-3">重新认识构造函数、原型和原型链</h1>
+          <h1 className="subtitle is-2">重新认识构造函数、原型和原型链</h1>
           <div className="media-content">
             <p>2019年05月09日 阅读 25316</p>
           </div>

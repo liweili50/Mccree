@@ -17,25 +17,25 @@ import Feedback from "../views/feedback/index";
 import Tags from "../views/tags/index";
 import Tag from "../views/tag/index";
 import NoMatch from "../views/noMatch/index";
-const About = function() {
-  return<div className="section is-body is-mobile"></div>
+const About = function () {
+  return <div className="section is-body is-mobile"></div>
 };
 
 function PrivateRoute({ component: Component, ...rest }) {
   return (
-    <div className="app-container has-background-light">
-    <Navbar />
-    <Route
-      {...rest}
-      render={props =>
-        (
-          <Component {...props} />
-        ) 
-      }
-    />
-    <Suspension />
-    <Footer />
-  </div>
+    <React.Fragment>
+      <Navbar />
+      <Route
+        {...rest}
+        render={props =>
+          (
+            <Component {...props} />
+          )
+        }
+      />
+      <Suspension />
+      <Footer />
+    </React.Fragment>
   );
 }
 class PrimaryLayout extends Component {

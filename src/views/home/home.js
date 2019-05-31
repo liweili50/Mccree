@@ -68,16 +68,15 @@ class Home extends Component {
       <div className="section is-body is-mobile">
         <div className="container">
           <div className="columns">
-            <div className="column">
-              <InfiniteScroll
-                pageStart={0}
-                loadMore={this.loadMore}
-                hasMore={this.state.hasMore}
-                loader={<div key={0}>Loading ...</div>}
-              >
-                {list}
-              </InfiniteScroll>
-            </div>
+            <InfiniteScroll
+              className="column"
+              pageStart={0}
+              loadMore={this.loadMore}
+              hasMore={this.state.hasMore}
+              loader={<div key={0}>Loading ...</div>}
+            >
+              {list}
+            </InfiniteScroll>
             <div className="column is-narrow is-narrow-fullhd is-hidden-touch">
               <Card />
             </div>
