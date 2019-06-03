@@ -20,8 +20,7 @@ class Footer extends Component {
                         aria-hidden="true"
                       />
                     </span>
-                    <span className="inline-block">2018年10月</span>
-                    <span>Linux编辑文档，习惯性的卡住了！</span>
+                    <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
                   </li>
                   <li>
                   <span className="icon">
@@ -30,8 +29,7 @@ class Footer extends Component {
                         aria-hidden="true"
                       />
                     </span>
-                    <span>2018年10月</span>
-                    <span>Linux编辑文档，习惯性的卡住了！</span>
+                    <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
                   </li>
                   <li>
                   <span className="icon">
@@ -40,8 +38,7 @@ class Footer extends Component {
                         aria-hidden="true"
                       />
                     </span>
-                    <span>2018年10月</span>
-                    <span>Linux编辑文档，习惯性的卡住了！</span>
+                    <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
                   </li>
                 </ul>
               </li>
@@ -55,8 +52,7 @@ class Footer extends Component {
                         aria-hidden="true"
                       />
                     </span>
-                    <span>2018年10月</span>
-                    <span>Linux编辑文档，习惯性的卡住了！</span>
+                    <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
                   </li>
                   <li>
                   <span className="icon">
@@ -65,8 +61,7 @@ class Footer extends Component {
                         aria-hidden="true"
                       />
                     </span>
-                    <span>2018年10月</span>
-                    <span>Linux编辑文档，习惯性的卡住了！</span>
+                    <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
                   </li>
                   <li>
                   <span className="icon">
@@ -75,8 +70,7 @@ class Footer extends Component {
                         aria-hidden="true"
                       />
                     </span>
-                    <span>2018年10月</span>
-                    <span>Linux编辑文档，习惯性的卡住了！</span>
+                    <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
                   </li>
                 </ul>
               </li>
@@ -90,8 +84,7 @@ class Footer extends Component {
                         aria-hidden="true"
                       />
                     </span>
-                    <span>2018年10月</span>
-                    <span>Linux编辑文档，习惯性的卡住了！</span>
+                    <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
                   </li>
                 </ul>
               </li>

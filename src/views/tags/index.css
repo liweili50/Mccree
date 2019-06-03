@@ -1,10 +1,11 @@
 .tags-container {
     text-align: center;
     background-color: white;
+    margin-bottom: 0.5rem;
 }
 
 .tags-container .tags {
-    padding: 1rem;
+    padding: 1rem 0;
 }
 .tags-container .tag {
     margin: 1rem;

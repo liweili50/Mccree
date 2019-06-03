@@ -12,6 +12,8 @@
     border-bottom: 2px solid whitesmoke;
     cursor: pointer;
     padding: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
  }
  .archive-list li  .icon {
     margin-right: 10px;
@@ -19,10 +21,9 @@
 .archive-list li .icon i {
     font-size: 0.6rem;
 }
-.archive-list li span:nth-child(2) {
-    margin-right: 40px;
+.archive-list li .time {
+    margin-right: 20px;
 }
-
 @media screen and (min-width: 1024px) {
     .archive-content {
         padding: 3rem;
