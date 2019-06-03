@@ -75,20 +75,22 @@ class Article extends Component {
   render() {
     return (
       <div className="section is-body is-mobile">
-        <div className="container article-container has-background-white">
-          <h1 className="subtitle is-2">重新认识构造函数、原型和原型链</h1>
-          <div className="media-content">
-            <p>2019年05月09日 阅读 25316</p>
+        <div className="container">
+          <div className="article-container has-background-white">
+            <h1 className="subtitle is-2">重新认识构造函数、原型和原型链</h1>
+            <div className="media-content">
+              <p>2019年05月09日 阅读 25316</p>
+            </div>
+            <div
+              id="content"
+              className="markdown-body"
+              dangerouslySetInnerHTML={{
+                __html: arr[this.props.match.params.id - 1].content
+              }}
+            />
+            <hr />
+            <div id="comments" />
           </div>
-          <div
-            id="content"
-            className="markdown-body"
-            dangerouslySetInnerHTML={{
-              __html: arr[this.props.match.params.id - 1].content
-            }}
-          />
-          <hr />
-          <div id="comments" />
         </div>
       </div>
     );

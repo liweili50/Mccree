@@ -18,11 +18,11 @@ class Home extends Component {
     setTimeout(() => {
       this.loadData();
     }, 500);
-    console.log(
-      "%c%s",
-      "color: black; background: white; font-size: 24px;",
-      "来了...老弟？ 留下您的反馈呗"
-    );
+    // console.log(
+    //   "%c%s",
+    //   "color: black; background: white; font-size: 24px;",
+    //   "来了...老弟？ 留下您的反馈呗"
+    // );
   }
   loadData() {
     this.setState({

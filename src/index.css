@@ -19,5 +19,5 @@ html,body,#root{
 }
 .container {
   max-width: 960px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }

@@ -9,7 +9,7 @@ class Footer extends Component {
       <DocumentTitle title="归档">
         <div className="section is-body is-mobile">
           <div className="container has-background-white">
-            <ul className="archive-wrap">
+            <ul className="archive-content">
               <li>
                 <h5 className="is-size-4">2018</h5>
                 <ul className="archive-list">

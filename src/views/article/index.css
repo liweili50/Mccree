@@ -1,5 +1,5 @@
 .article-container {
-    padding: 3rem;
+    padding: 2rem 1rem;
 }
 .media-content h5 {
     font-weight: 600;
@@ -17,3 +17,8 @@
     cursor: zoom-in;
 }
 
+@media screen and (min-width: 1024px) {
+    .article-container {
+        padding: 3rem;
+    }
+  }

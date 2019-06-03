@@ -8,8 +8,7 @@ class Footer extends Component {
           {/* <span className="text-muted">My Website &#169; {new Date().getFullYear()}</span> */}
           <div className="content">
           <p>
-            <strong>Nebula</strong> by <a href="https://github.com/liweili50">Jonas</a>. The source code is at
-            <a href="https://github.com/liweili50/react-mccree"> here</a>. &#169; {new Date().getFullYear()}
+            <strong>Nebula</strong> by <a href="https://github.com/liweili50">Jonas</a>. &#169; {new Date().getFullYear()}
           </p>
         </div>
         </div>

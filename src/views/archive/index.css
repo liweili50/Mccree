@@ -1,20 +1,17 @@
 
- .archive-wrap {
-    padding: 3rem;
+ .archive-content {
+    padding: 2rem 0rem;
  }
- .archive-wrap>li{
+ .archive-content>li{
      width: 90%;
      margin: 0 auto;
      padding-bottom: 1.5rem;
- }
- .archive-wrap .is-size-4 {
-     margin-left: 3rem;
  }
 
  .archive-list li {
     border-bottom: 2px solid whitesmoke;
     cursor: pointer;
-    padding: 1rem 3rem;
+    padding: 1rem 0;
  }
  .archive-list li  .icon {
     margin-right: 10px;
@@ -25,3 +22,9 @@
 .archive-list li span:nth-child(2) {
     margin-right: 40px;
 }
+
+@media screen and (min-width: 1024px) {
+    .archive-content {
+        padding: 3rem;
+    }
+  }
