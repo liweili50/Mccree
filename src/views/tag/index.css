@@ -10,6 +10,9 @@
       width: 90%;
       margin: 0 auto;
   }
+.tag-content .is-size-4 {
+    padding-left: 6px;
+}
 .article-list li {
     border-bottom: 2px solid whitesmoke;
     cursor: pointer;

@@ -67,21 +67,26 @@ class Home extends Component {
     return (
       <div className="section is-body is-mobile">
         <div className="container">
-          <div className="columns">
-            <InfiniteScroll
-              className="column"
-              pageStart={0}
-              loadMore={this.loadMore}
-              hasMore={this.state.hasMore}
-              loader={<div key={0}>Loading ...</div>}
-            >
-              {list}
-            </InfiniteScroll>
-            <div className="column is-narrow is-narrow-fullhd is-hidden-touch">
-              <Card />
+          <div className="main-content">
+            <div className="columns">
+              <InfiniteScroll
+                className="column"
+                pageStart={0}
+                loadMore={this.loadMore}
+                hasMore={this.state.hasMore}
+                loader={<div key={0}>Loading ...</div>}
+              >
+                {list}
+              </InfiniteScroll>
+              <div className="column is-narrow is-narrow-fullhd is-hidden-touch">
+                <Card />
+              </div>
             </div>
           </div>
         </div>
+
+
+
       </div>
     );
   }

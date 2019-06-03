@@ -10,7 +10,6 @@ class Tag extends Component {
       <div className="section is-body is-mobile">
         <div className="container">
           <div className="tag-content has-background-white">
-
             <h5 className="is-size-4">{this.props.match.params.id}</h5>
             <ul className="article-list">
               <li>
@@ -58,9 +57,7 @@ class Tag extends Component {
                 </span>
                 <span><span className="time">2018年10月</span>Linux编辑文档，习惯性的卡住了！</span>
               </li>
-
             </ul>
-
           </div>
         </div>
       </div>
