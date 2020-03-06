@@ -13,10 +13,11 @@ function Article(props) {
       <div className="article-body">
         <h1 className="title is-4">{props.article.title}</h1>
         <div className="subtitle is-6">
-          {props.article.creatTime} {props.article.archive}
+          {props.article.createTime}
+           {/* {props.article.archive} */}
         </div>
-        <div className="content">{props.article.content}</div>
-        <Link to={"article/" + props.article.id} className="button is-primary">
+        {/* <div className="content">{props.article.content}</div> */}
+        <Link to={"article/" + props.article._id} className="button is-primary">
           查看全文
         </Link>
         <hr className="hr" />

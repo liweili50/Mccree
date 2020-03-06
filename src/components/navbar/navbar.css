@@ -2,36 +2,32 @@
   cursor: pointer;
 }
 
-/* .navbar-menu.is-active {
-  animation: slideInDown 0.3s linear;
-} */
-.is-mobile.is-header {
+.is-header.section {
   padding: 0.5rem 0;
 }
-  
-
-@-webkit-keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+.navbar-item .control {
+  display: flex;
+  align-items: center;
 }
-
-@keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+.navbar-item .control i{
+  cursor: pointer;
+}
+.navbar-item .control input {
+  border: none;
+  height: 32px;
+  padding: 0px;
+}
+.navbar-item .control .slideInNone {
+  width: 0px;
+  outline: none;
+  border-bottom: 1px solid #00d1b2;
+  transition: width 0.3s linear;
+}
+.navbar-item .control .slideInRight{
+  width: 180px;
+  height: 32px;
+  outline: none;
+  border-bottom: 1px solid #00d1b2;
+  padding-left: 10px;
+  transition: width 0.3s linear;
 }

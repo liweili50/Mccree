@@ -1,13 +1,6 @@
-.is-body {
-  padding-top: 1.5rem;
-}
-.is-mobile.section {
+.is-body.section {
   padding: 1.5rem 0;
 }
-.main-content {
-  overflow: hidden;
-}
-
 .column:empty {
   margin: 1rem auto;
   width: 100%;

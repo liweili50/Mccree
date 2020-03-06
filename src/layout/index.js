@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import {
   //   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  withRouter
 } from "react-router-dom";
+// import DocumentTitle from "react-document-title";
 
 import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/footer";
@@ -21,10 +23,11 @@ const About = function () {
   return <div className="section is-body is-mobile"></div>
 };
 
-function PrivateRoute({ component: Component, ...rest }) {
+function CustomRoute({ component: Component, ...rest }) {
+  // console.log(rest)
+  document.title = rest.title
   return (
-    <React.Fragment>
-      <Navbar />
+    // <DocumentTitle title={rest.title}>
       <Route
         {...rest}
         render={props =>
@@ -33,28 +36,43 @@ function PrivateRoute({ component: Component, ...rest }) {
           )
         }
       />
+    // </DocumentTitle>
+  );
+}
+function PrivateRoute(props) {
+  return (
+    <React.Fragment>
+      <Navbar />
+      <CustomRoute
+        {...props}
+      />
       <Suspension />
       <Footer />
     </React.Fragment>
   );
 }
 class PrimaryLayout extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   props.history.listen((location) => { 
+  //     console.log(location); 
+  //   })
+  // }
   render() {
     return (
       <Switch>
-        <PrivateRoute exact path="/" component={Home} />
-        <PrivateRoute exact path="/home" component={Home} />
-        <PrivateRoute exact path="/archive" component={Archive} />
-        <PrivateRoute exact path="/about" component={About} />
+        <PrivateRoute exact path={["/", "/home", '/search']} title="首页" component={Home} />
+        <PrivateRoute exact path="/archive" title="分类" component={Archive} />
+        <PrivateRoute exact path="/about" title="关于" component={About} />
         <PrivateRoute exact path="/login" component={Login} />
         <PrivateRoute exact path="/article/:id" component={Article} />
-        <PrivateRoute exact path="/Tags" component={Tags} />
+        <PrivateRoute exact path="/Tags" title="标签" component={Tags} />
         <PrivateRoute exact path="/tags/:id" component={Tag} />
-        <Route exact path="/feedback" component={Feedback} />
+        <Route exact path="/feedback" title="反馈" component={Feedback} />
         <Route component={NoMatch} />
       </Switch>
     );
   }
 }
 
-export default PrimaryLayout;
+export default withRouter(PrimaryLayout);

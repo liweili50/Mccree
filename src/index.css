@@ -1,23 +1,17 @@
 
-html{
-  font-size: 16px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+html,body{
   min-width: 300px;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  position: relative;
+  z-index: 10;
 }
-html,body,#root{
+#root{
   width: 100%;
   min-height: 100%;
   box-sizing: border-box;
 }
 .container {
   max-width: 960px;
-  /* overflow: hidden; */
 }

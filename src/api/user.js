@@ -2,7 +2,7 @@ import $http from './index'
 
 export function getBackgroundImg (data) {
   return $http({
-    url: '/img/image',
+    url: '/resource/image',
     method: 'get'
   })
 }

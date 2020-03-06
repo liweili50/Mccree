@@ -1,22 +1,52 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
-import { message } from 'antd';
+import { NavLink, withRouter } from 'react-router-dom'
 import './navbar.css';
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { isCollapse: false };
-    this.handleClick = this.handleClick.bind(this);
-    this.register = this.register.bind(this)
+    this.state = { isCollapse: false, isInputShow: true, keyword: '' };
+    this.handleCollapse = this.handleCollapse.bind(this);
+    this.handleKeywordChange = this.handleKeywordChange.bind(this);
+    this.search = this.search.bind(this);
+    props.history.listen((location) => {
+      if (location.pathname === '/search') {
+        let value = new URLSearchParams(location.search).get('keyword')
+        this.setState({ isInputShow: true, keyword: value });
+      } else {
+        this.setState({ keyword: '' });
+      }
+    })
   }
-  handleClick() {
+  search() {
+    if (this.state.keyword === '') {
+      this.setState({ isInputShow: !this.state.isInputShow });
+    } else {
+      // this.props.history.push({ pathname: "/t" });
+      this.props.history.replace('/search?keyword=' + this.state.keyword);
+    }
+  }
+  handleCollapse() {
     this.setState({ isCollapse: !this.state.isCollapse });
   }
-  register() {
-    message.info('暂未开放注册！敬请期待！');
+  handleKeywordChange(event) {
+    this.setState({ keyword: event.target.value });
+  }
+  handleEnterKey(e) {
+    if (e.nativeEvent.keyCode === 13) {
+      this.search()
+    }
+  }
+  componentDidMount() {
+    // if (this.props.location.pathname === '/search') {
+    //   let value = new URLSearchParams(this.props.location.search).get('keyword')
+    //   this.setState({ isInputShow: true, keyword: value });
+    // } else {
+    //   this.setState({ isInputShow: false, keyword: '' });
+    // }
   }
   render() {
     const isCollapse = this.state.isCollapse;
+    const isInputShow = this.state.isInputShow;
     return (
       <div className="section is-header is-mobile has-background-white">
         <div className="container">
@@ -25,7 +55,7 @@ class Navbar extends Component {
               <NavLink to="/home" className="navbar-item">
                 <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
               </NavLink>
-              <div className={`navbar-burger burger ${isCollapse ? 'is-active' : ''}`} onClick={this.handleClick} data-target="navbarExampleTransparentExample">
+              <div className={`navbar-burger burger ${isCollapse ? 'is-active' : ''}`} onClick={this.handleCollapse} data-target="navbarExampleTransparentExample">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -40,11 +70,9 @@ class Navbar extends Component {
               </div>
               <div className="navbar-end">
                 <div className="navbar-item">
-                  <div className="buttons">
-                    <NavLink to="/login" className="button is-primary" activeClassName="is-active"><strong>登录</strong></NavLink>
-                    <span onClick={this.register} className="button is-light">
-                      注册
-                    </span>
+                  <div className="control">
+                    <input type="text" onKeyPress={this.handleEnterKey.bind(this)} className={`${isInputShow ? 'slideInRight' : 'slideInNone'}`} value={this.state.keyword} onChange={this.handleKeywordChange} placeholder="search..." />
+                    <i onClick={this.search} className="czs-search-l"></i>
                   </div>
                 </div>
               </div>
@@ -56,4 +84,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
