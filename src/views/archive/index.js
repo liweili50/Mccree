@@ -7,7 +7,7 @@ import "./index.css";
 function ListItems(props) {
   console.log(props)
   const listItems = props.list.map((item) =>
-   <li key={item._id} to={"article/" + item._id}>
+   <li key={item._id} >
       <Link to={"article/" + item._id}>
       <span className="icon">
         <i
@@ -15,7 +15,7 @@ function ListItems(props) {
           aria-hidden="true"
         />
       </span>
-      <span><span className="time">2018年10月</span>{item.createTime}</span>
+      <span><span className="time">{item.createTime}</span>{item.title}</span>
     </Link>
    </li>
 
