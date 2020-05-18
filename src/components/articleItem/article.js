@@ -16,7 +16,7 @@ function Article(props) {
           {props.article.createTime}
            {/* {props.article.archive} */}
         </div>
-        {/* <div className="content">{props.article.content}</div> */}
+        <div className="content">{props.article.description}</div>
         <Link to={"article/" + props.article._id} className="button is-primary">
           查看全文
         </Link>

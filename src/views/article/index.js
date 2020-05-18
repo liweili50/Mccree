@@ -16,14 +16,13 @@ class Article extends Component {
       imgUrl: "",
       article: null
     };
-    this.show = this.show.bind(this);
     this.loadData= this.loadData.bind(this);
   }
   componentDidMount() {
     const gitalk = new Gitalk({
       clientID: '455057ff16e070218483',
       clientSecret: '1dcb080f82e4958655c4feb5bebf11310ca6face',
-      repo: 'blog-resource',
+      repo: 'liweili50.github.io',
       owner: 'liweili50',
       admin: ['liweili50'],
       id: this.props.match.params.id,      // Ensure uniqueness and length less than 50
@@ -31,18 +30,31 @@ class Article extends Component {
     })
 
     gitalk.render('comments')
-    document.getElementById("content").addEventListener("click", this.show);
     window.scrollTo(0, 0);
     this.loadData()
   }
-  componentWillUnmount() {
-    document.getElementById("content").removeEventListener("click", this.show);
+  parseDom(arg) {
+　　 var objE = document.createElement("div");
+　　 objE.innerHTML = arg;
+    console.log(objE.querySelectorAll('p'))
+    let headerUrl = 'https://github.com/liweili50/liweili50.github.io/blob/dev/content/blog/'
+    let imgs = Array.from(objE.querySelectorAll('img'))
+    imgs.forEach(item=>{
+      let url = item.getAttribute('src').substring(1)
+      item.src = headerUrl+this.state.article.name+url+'?raw=true'
+    })
+    // let url = objE.querySelector('img').getAttribute('src')
+    // objE.querySelector('img').src = `https://github.com/liweili50/liweili50.github.io/blob/dev/content/blog/${this.state.article.name}${url}?raw=true`
+　　 return objE;
   }
   loadData() {
     getArticle(this.props.match.params.id).then(res=>{
       this.setState({
         article: res.data.article
       })
+     let dom =  this.parseDom(res.data.article.content)
+     document.getElementById('content').appendChild(dom)
+     console.log(dom)
     })
   }
   show(event) {
@@ -74,9 +86,9 @@ class Article extends Component {
             <div
               id="content"
               className="markdown-body"
-              dangerouslySetInnerHTML={{
-                __html: this.state.article!==null?this.state.article.content:''
-              }}
+              // dangerouslySetInnerHTML={{
+              //   __html: this.state.article!==null?this.state.article.content:''
+              // }}
             />
             <hr />
             <div id="comments" />
