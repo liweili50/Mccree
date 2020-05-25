@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { BackToTop } from 'react-jump';
 import "./index.css";
 import { Link } from "react-router-dom";
+import BackToTop from '../backToTop/index'
 class Suspension extends Component {
   render() {
     return (
