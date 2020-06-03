@@ -54,6 +54,7 @@ class Article extends Component {
       })
      let dom =  this.parseDom(res.data.article.content)
      document.getElementById('content').appendChild(dom)
+     document.title = res.data.article.title
      console.log(dom)
     })
   }
