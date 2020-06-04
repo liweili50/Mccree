@@ -18,12 +18,6 @@
     display: flex;
     justify-content: flex-start;
  }
- .archive-list li a {
-     color: #4a4a4a;
- }
- .archive-list li a:hover {
-     color: #3273dc;
- }
  .archive-list li  .icon {
     margin-right: 10px;
 }

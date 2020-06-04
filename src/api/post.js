@@ -19,3 +19,16 @@ export function getArchiveList() {
     method: 'get'
   })
 }
+export function getTagList() {
+  return $http({
+    url: '/article/getTags',
+    method: 'get'
+  })
+}
+export function getArticleListByTag(data) {
+  return $http({
+    url: '/article/getArticlesByTag',
+    method: 'get',
+    params: data
+  })
+}
