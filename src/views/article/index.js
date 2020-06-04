@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import "viewerjs/dist/viewer.css";
-import Viewer from "viewerjs";
+import Gitalk from 'gitalk'
 import "github-markdown-css/github-markdown.css";
 import "./index.css";
-
 import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
 import { getArticle } from '../../api/post'
 
 class Article extends Component {
@@ -14,11 +11,13 @@ class Article extends Component {
     this.state = {
       isHidden: true,
       imgUrl: "",
-      article: null
+      article: null,
+      content: ''
     };
-    this.loadData= this.loadData.bind(this);
+    this.handleGetArticle = this.handleGetArticle.bind(this);
   }
   componentDidMount() {
+    this.handleGetArticle()
     const gitalk = new Gitalk({
       clientID: '455057ff16e070218483',
       clientSecret: '1dcb080f82e4958655c4feb5bebf11310ca6face',
@@ -31,65 +30,42 @@ class Article extends Component {
 
     gitalk.render('comments')
     window.scrollTo(0, 0);
-    this.loadData()
   }
-  parseDom(arg) {
-　　 var objE = document.createElement("div");
-　　 objE.innerHTML = arg;
-    console.log(objE.querySelectorAll('p'))
-    let headerUrl = 'https://github.com/liweili50/liweili50.github.io/blob/dev/content/blog/'
-    let imgs = Array.from(objE.querySelectorAll('img'))
-    imgs.forEach(item=>{
+  getArticleContent(obj) {
+    var el = document.createElement("div");
+    el.innerHTML = obj.content;
+    let baseUrl = 'https://github.com/liweili50/liweili50.github.io/blob/dev/content/blog/'
+    let imgs = Array.from(el.querySelectorAll('img'))
+    imgs.forEach(item => {
       let url = item.getAttribute('src').substring(1)
-      item.src = headerUrl+this.state.article.name+url+'?raw=true'
+      item.src = baseUrl + obj.name + url + '?raw=true'
     })
-    // let url = objE.querySelector('img').getAttribute('src')
-    // objE.querySelector('img').src = `https://github.com/liweili50/liweili50.github.io/blob/dev/content/blog/${this.state.article.name}${url}?raw=true`
-　　 return objE;
+    return el.innerHTML;
   }
-  loadData() {
-    getArticle(this.props.match.params.id).then(res=>{
+  handleGetArticle() {
+    getArticle(this.props.match.params.id).then(res => {
       this.setState({
-        article: res.data.article
+        article: res.data.article,
+        content: this.getArticleContent(res.data.article)
       })
-     let dom =  this.parseDom(res.data.article.content)
-     document.getElementById('content').appendChild(dom)
-     document.title = res.data.article.title
-     console.log(dom)
+      document.title = res.data.article.title
     })
-  }
-  show(event) {
-    if (event.target.tagName === "IMG") {
-      var image = new Image();
-      image.src = event.target.src;
-      // var galley = document.getElementById('content');
-      var viewer = new Viewer(image, {
-        movable: false,
-        zoomable: false,
-        title: false,
-        navbar: false,
-        hidden: function () {
-          viewer.destroy();
-        }
-      });
-      viewer.show();
-    }
   }
   render() {
     return (
       <div className="section is-body is-mobile">
         <div className="container">
           <div className="article-container has-background-white">
-            <h1 className="subtitle is-2">{this.state.article!==null?this.state.article.title:''}</h1>
+            <h1 className="subtitle is-2">{this.state.article !== null ? this.state.article.title : ''}</h1>
             <div className="media-content">
-              <p>{this.state.article!==null?this.state.article.createTime:''}</p>
+              <p>{this.state.article !== null ? this.state.article.createTime : ''}</p>
             </div>
             <div
               id="content"
               className="markdown-body"
-              // dangerouslySetInnerHTML={{
-              //   __html: this.state.article!==null?this.state.article.content:''
-              // }}
+              dangerouslySetInnerHTML={{
+                __html: this.state.content !== '' ? this.state.content : ''
+              }}
             />
             <hr />
             <div id="comments" />
