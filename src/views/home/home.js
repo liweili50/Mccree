@@ -11,7 +11,7 @@ class Home extends Component {
     this.state = {
       hasMore: true,
       pageNum:1,
-      pageSize:2,
+      pageSize:5,
       articleList: []
     };
     this.loadMore = this.loadMore.bind(this);
