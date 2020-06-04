@@ -7,20 +7,18 @@ import "./index.css";
 function ListItems(props) {
   console.log(props)
   const listItems = props.list.map((item) =>
-   <li key={item._id} >
-      <Link to={"article/" + item._id}>
+    <li key={item._id} >
       <span className="icon">
         <i
           className="czs-square-o"
           aria-hidden="true"
         />
       </span>
-      <span><span className="time">{item.createTime}</span>{item.title}</span>
-    </Link>
-   </li>
-
+      <Link to={"article/" + item._id}>
+        <span><span className="time">{item.createTime}</span>{item.title}</span>
+      </Link>
+    </li>
   );
-  // 正确！这里不需要指定 key：
   return listItems
 }
 
