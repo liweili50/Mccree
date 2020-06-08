@@ -19,15 +19,12 @@ import Feedback from "../views/feedback/index";
 import Tags from "../views/tags/index";
 import Tag from "../views/tag/index";
 import NoMatch from "../views/noMatch/index";
-const About = function () {
-  return <div className="section is-body is-mobile"></div>
-};
+import About from "../views/about/index"
 
 function CustomRoute({ component: Component, ...rest }) {
   // console.log(rest)
-  document.title = rest.title
+  document.title = rest.title || 'Logue'
   return (
-    // <DocumentTitle title={rest.title}>
       <Route
         {...rest}
         render={props =>
@@ -36,7 +33,6 @@ function CustomRoute({ component: Component, ...rest }) {
           )
         }
       />
-    // </DocumentTitle>
   );
 }
 function PrivateRoute(props) {
@@ -65,7 +61,7 @@ class PrimaryLayout extends Component {
         <PrivateRoute exact path="/archive" title="分类" component={Archive} />
         <PrivateRoute exact path="/about" title="关于" component={About} />
         <PrivateRoute exact path="/login" component={Login} />
-        <PrivateRoute exact path="/article/:id" component={Article} />
+        <PrivateRoute exact path="/post/:id" component={Article} />
         <PrivateRoute exact path="/Tags" title="标签" component={Tags} />
         <PrivateRoute exact path="/tags/:id" component={Tag} />
         <Route exact path="/feedback" title="反馈" component={Feedback} />

@@ -14,7 +14,7 @@ function ListItems(props) {
           aria-hidden="true"
         />
       </span>
-      <Link to={"article/" + item._id}>
+      <Link to={"post/" + item._id}>
         <span><span className="time">{item.createTime}</span>{item.title}</span>
       </Link>
     </li>

@@ -62,7 +62,7 @@ class Home extends Component {
                 hasMore={this.state.hasMore}
                 loader={<div key={0}>Loading ...</div>}
               >
-                {list}
+                {this.state.articleList.length === 0 && this.state.hasMore===false?<div key={0}>Accident Happened ...</div>:list}
               </InfiniteScroll>
               <div className="column is-narrow is-narrow-fullhd is-hidden-touch">
                 <Card />
