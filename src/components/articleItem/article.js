@@ -17,7 +17,7 @@ function Article(props) {
            {/* {props.article.archive} */}
         </div>
         <div className="content">{props.article.description}</div>
-        <Link to={"article/" + props.article._id} className="button is-primary">
+        <Link to={"post/" + props.article._id} className="button is-primary">
           查看全文
         </Link>
         <hr className="hr" />
