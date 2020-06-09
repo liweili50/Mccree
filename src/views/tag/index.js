@@ -13,7 +13,7 @@ const ArticleList = function (props) {
           aria-hidden="true"
         />
       </span>
-      <Link to={"/post/" + article._id}>
+      <Link to={"/article/" + article._id}>
         <span><span className="time">{article.createTime}</span>{article.title}</span>
       </Link>
     </li>
