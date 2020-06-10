@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom'
+import img from '../../assets/img/logo.png'
 import './navbar.css';
 class Navbar extends Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class Navbar extends Component {
           <nav className="navbar">
             <div className="navbar-brand">
               <NavLink to="/home" className="navbar-item">
-                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+                <img src={img} alt="" width="112" height="28" />
               </NavLink>
               <div className={`navbar-burger burger ${isCollapse ? 'is-active' : ''}`} onClick={this.handleCollapse} data-target="navbarExampleTransparentExample">
                 <span></span>
