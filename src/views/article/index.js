@@ -3,6 +3,8 @@ import Gitalk from 'gitalk'
 import "github-markdown-css/github-markdown.css";
 import "./index.css";
 import 'gitalk/dist/gitalk.css'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github.css'
 import { getArticle } from '../../api/post'
 
 class Article extends Component {
@@ -49,6 +51,7 @@ class Article extends Component {
         content: this.getArticleContent(res.data.article)
       })
       document.title = res.data.article.title
+      hljs.initHighlighting();
     })
   }
   render() {
