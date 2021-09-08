@@ -1,34 +1,35 @@
-import $http from './index'
+import request from "../utils/request";
 
-export function getArticleList(data) {
-  return $http({
-    url: '/article/getArticleList',
-    method: 'get',
-    params: data
-  })
+export function getPostsList(data) {
+  return request({
+    url: "/posts/getPostsList",
+    method: "get",
+    params: data,
+  });
 }
-export function getArticle(id) {
-  return $http({
-    url: '/article/' + id,
-    method: 'get'
-  })
+export function getPostById(id) {
+  return request({
+    url: "/posts/getPostById",
+    method: "get",
+    params: { id },
+  });
 }
 export function getArchiveList() {
-  return $http({
-    url: '/article/getArchiveList',
-    method: 'get'
-  })
+  return request({
+    url: "/posts/getArchiveList",
+    method: "get",
+  });
 }
 export function getTagList() {
-  return $http({
-    url: '/article/getTags',
-    method: 'get'
-  })
+  return request({
+    url: "/posts/getTagsList",
+    method: "get",
+  });
 }
-export function getArticleListByTag(data) {
-  return $http({
-    url: '/article/getArticlesByTag',
-    method: 'get',
-    params: data
-  })
+export function getPostsByTag(data) {
+  return request({
+    url: "/posts/getPostsByTag",
+    method: "get",
+    params: data,
+  });
 }

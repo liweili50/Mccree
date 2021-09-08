@@ -5,7 +5,7 @@ import BackToTop from '../backToTop/index'
 class Suspension extends Component {
   render() {
     return (
-      <div className="section suspension-panel">
+      <div className="suspension-panel">
         <BackToTop>
           <span className="icon has-text-primary">
             <i title="回到顶部" className="czs-angle-up-l" aria-hidden="true" />

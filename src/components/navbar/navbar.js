@@ -37,20 +37,12 @@ class Navbar extends Component {
       this.search()
     }
   }
-  componentDidMount() {
-    // if (this.props.location.pathname === '/search') {
-    //   let value = new URLSearchParams(this.props.location.search).get('keyword')
-    //   this.setState({ isInputShow: true, keyword: value });
-    // } else {
-    //   this.setState({ isInputShow: false, keyword: '' });
-    // }
-  }
   render() {
     const isCollapse = this.state.isCollapse;
     const isInputShow = this.state.isInputShow;
     return (
-      <div className="section is-header is-mobile has-background-white">
-        <div className="container">
+      <header className="is-header is-mobile has-background-white p-2">
+        <div className="container is-max-desktop">
           <nav className="navbar">
             <div className="navbar-brand">
               <NavLink to="/home" className="navbar-item">
@@ -80,7 +72,7 @@ class Navbar extends Component {
             </div>
           </nav>
         </div>
-      </div>
+      </header>
     );
   }
 }

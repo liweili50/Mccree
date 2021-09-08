@@ -8,7 +8,7 @@ class About extends Component {
         }
     }
     render() {
-        return (<div className="section is-body is-mobile"></div>)
+        return (<div className=""></div>)
     }
 }
 export default About;
