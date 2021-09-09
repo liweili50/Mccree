@@ -9,7 +9,7 @@ import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "gitalk/dist/gitalk.css";
 import "github-markdown-css/github-markdown.css";
 
-const myImage = ({ children, ...props }) => {
+const Image = ({ children, ...props }) => {
   let { src, alt, folderName, ...rest } = props;
   let url = `https://github.com/liweili50/liweili50.github.io/blob/master/content/blog${folderName}${src}?raw=true`;
   return <img src={url} alt={alt} {...rest} />;
@@ -69,8 +69,8 @@ class Article extends Component {
     return (
       <DocumentTitle title={this.state.title}>
         <div className="block p-6 has-background-white">
-          <h1 class="title"> {this.state.title}</h1>
-          <h2 class="subtitle has-text-weight-normal is-size-6">
+          <h1 className="title pb-2"> {this.state.title}</h1>
+          <h2 className="subtitle has-text-weight-normal is-size-6">
             {this.state.time}
           </h2>
           <div id="content" className="markdown-body">
@@ -79,7 +79,7 @@ class Article extends Component {
                 forceBlock: true,
                 overrides: {
                   img: {
-                    component: myImage,
+                    component: Image,
                     props: {
                       folderName: this.state.folderName,
                     },

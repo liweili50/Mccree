@@ -47,7 +47,7 @@ export default class BackToTop extends Component {
     return this.state.isShow ? (
       <div
         {...props}
-        className={`jump back-to-top ${className}`}
+        className={`jump back-to-top ${className?className:''}`}
         onClick={() => this.scrollToTop(options)}
       >
         {children}

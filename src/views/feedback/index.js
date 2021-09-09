@@ -1,40 +1,72 @@
-import React, { Component } from "react";
+import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
-class Feedback extends Component {
-  render() {
-    return (
-      <div className="section is-body is-mobile">
-        <div className="container">
-          <div className="feedback-content">
-            <div className="field">
-              <label className="label">Name</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="您的名字"
-                />
-              </div>
-            </div>
 
-            <div className="field">
-              <label className="label">Problem</label>
-              <div className="control">
-                <textarea
-                  className="textarea"
-                  placeholder="有什么问题请给我留言"
-                />
-              </div>
-            </div>
+const Feedback = () => {
+  const [disabled, setDisabled] = useState(true);
+  const [contact, setContact] = useState("");
+  const [description, setDescription] = useState("");
 
+  useEffect(() => {
+    if (contact && description) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [contact, description]);
+
+  const handleSubmitClick = () => {
+    toast("👏 感谢您的反馈和建议 !", {
+      autoClose: 2000,
+      position: "top-center",
+    });
+  };
+  
+  return (
+    <div className="section is-body is-mobile">
+      <div className="container">
+        <div className="feedback-content">
+          <div className="field">
+            <label className="label">如何联系你？</label>
             <div className="control">
-              <button className="button is-primary">Submit</button>
+              <input
+                className="input"
+                type="text"
+                value={contact}
+                onChange={(event) => setContact(event.target.value)}
+                placeholder="请输入您的联系方式"
+              />
             </div>
+          </div>
+
+          <div className="field">
+            <label className="label">问题描述</label>
+            <div className="control">
+              <textarea
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+                className="textarea"
+                placeholder="请输入问题或反馈描述"
+              />
+            </div>
+          </div>
+
+          <div className="control">
+            <button
+              onClick={handleSubmitClick}
+              disabled={disabled}
+              className="button is-primary"
+            >
+              提交
+            </button>
           </div>
         </div>
       </div>
-    );
-  }
-}
+      <ToastContainer />
+    </div>
+  );
+};
 
 export default Feedback;

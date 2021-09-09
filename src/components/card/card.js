@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getBingDailyImage } from "../../api/sundry";
+import { getBingDailyImage, getJonasEmotion } from "../../api/sundry";
 import "./card.css";
 import "balloon-css";
 
@@ -8,16 +8,34 @@ class Card extends Component {
     super();
     this.state = {
       url: "",
+      copyright: "",
+      emotion: "",
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleGetJonasEmotion = this.handleGetJonasEmotion.bind(this);
+    this.handleGetBingDailyImage = this.handleGetBingDailyImage.bind(this);
   }
   handleClick() {
     window.open("http://www.bing.com");
   }
   componentDidMount() {
-    getBingDailyImage().then((res) => {
+    this.handleGetBingDailyImage();
+    this.handleGetJonasEmotion();
+  }
+  handleGetJonasEmotion() {
+    getJonasEmotion().then((res) => {
       this.setState({
-        url: res.data.url,
+        emotion: res.data.emotion,
+      });
+    });
+  }
+  handleGetBingDailyImage() {
+    getBingDailyImage().then((res) => {
+      let { url, copyright } = res.data;
+      copyright = copyright.split("(")[0];
+      this.setState({
+        url,
+        copyright,
       });
     });
   }
@@ -26,7 +44,11 @@ class Card extends Component {
       <div className="card">
         <div onClick={this.handleClick} className="card-image">
           <figure className="image is-3by2">
-            <img src={this.state.url} title="查看必应美图" alt="必应每日图片" />
+            <img
+              src={this.state.url}
+              title={this.state.copyright}
+              alt="必应每日图片"
+            />
           </figure>
         </div>
         <div className="card-content">
@@ -47,11 +69,13 @@ class Card extends Component {
             </div>
           </div>
 
-          <div className="content is-size-07">
-            How could I try to explain <br />
-            When I do,it turns away again <br />
-            And it's always been the same <br />
-            Same old story
+          <div style={{ minWidth: 200 + "px" }} className="content is-size-07">
+            {this.state.emotion.split(",").map((item, index) => (
+              <React.Fragment key={index}>
+                {item}
+                <br />
+              </React.Fragment>
+            ))}
           </div>
           <nav className="level is-mobile">
             <div className="level-left">
@@ -60,7 +84,7 @@ class Card extends Component {
                 rel="noopener noreferrer"
                 target="_blank"
                 href="https://github.com/liweili50"
-                aria-label="Github"
+                aria-label="Github 🎈"
                 data-balloon-pos="up"
               >
                 <span className="icon has-text-dark">
@@ -82,9 +106,9 @@ class Card extends Component {
               <a
                 className="level-item"
                 target="_blank"
-                href="https://weibo.com/u/2529890461"
+                href="https://weibo.com/liuyifeiofficial"
                 rel="noopener noreferrer"
-                aria-label="微博"
+                aria-label="❤️"
                 data-balloon-pos="up"
               >
                 <span className="icon has-text-dark">
@@ -95,7 +119,7 @@ class Card extends Component {
                 className="level-item has-text-dark"
                 href="mailto:liweili50@163.com"
                 rel="noopener noreferrer"
-                aria-label="邮箱"
+                aria-label="Email Me"
                 data-balloon-pos="up"
               >
                 <span className="icon">

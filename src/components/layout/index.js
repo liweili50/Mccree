@@ -17,8 +17,8 @@ function PrimaryRoute(props) {
           </DocumentTitle>
         </div>
       </main>
-      <Suspension />
       <Footer />
+      <Suspension />
     </React.Fragment>
   );
 }
