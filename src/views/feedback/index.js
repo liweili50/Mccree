@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "bulma-toast";
 import "./index.css";
 
 const Feedback = () => {
@@ -18,12 +16,14 @@ const Feedback = () => {
   }, [contact, description]);
 
   const handleSubmitClick = () => {
-    toast("👏 感谢您的反馈和建议 !", {
-      autoClose: 2000,
+    toast({
+      message: "👏 感谢您的反馈和建议 !",
+      type: "is-success",
       position: "top-center",
+      single: true
     });
   };
-  
+
   return (
     <div className="section is-body">
       <div className="container">
@@ -64,7 +64,6 @@ const Feedback = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

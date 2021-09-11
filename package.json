@@ -10,6 +10,7 @@
     "balloon-css": "^1.2.0",
     "bulma": "^0.9.3",
     "bulma-helpers": "^0.4.0",
+    "bulma-toast": "^2.4.1",
     "dayjs": "^1.10.6",
     "gitalk": "^1.7.2",
     "github-markdown-css": "^4.0.0",
@@ -22,7 +23,6 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "react-syntax-highlighter": "^15.4.4",
-    "react-toastify": "^8.0.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
