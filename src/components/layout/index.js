@@ -10,7 +10,7 @@ function PrimaryRoute(props) {
   return (
     <React.Fragment>
       <Navbar />
-      <main className="is-body is-flex-grow-1 m-4">
+      <main className="is-body is-flex-grow-1 my-5">
         <div className="container is-max-desktop">
           <DocumentTitle title={props.title}>
             <Route {...props} />
