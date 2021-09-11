@@ -53,7 +53,7 @@ class Home extends Component {
       return <Post key={article._id} article={article} />;
     });
     return (
-      <div className="columns">
+      <div className="columns is-gapless">
         <InfiniteScroll
           className="column"
           pageStart={0}
@@ -67,7 +67,7 @@ class Home extends Component {
             list
           )}
         </InfiniteScroll>
-        <div className="column is-narrow is-narrow-fullhd is-hidden-touch">
+        <div className="column ml-4 is-narrow is-hidden-touch">
           <Card />
         </div>
       </div>
