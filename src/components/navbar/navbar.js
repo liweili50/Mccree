@@ -41,7 +41,7 @@ class Navbar extends Component {
     const isCollapse = this.state.isCollapse;
     const isInputShow = this.state.isInputShow;
     return (
-      <header className="is-header is-mobile has-background-white p-2">
+      <header className="is-header has-background-white p-2">
         <div className="container is-max-desktop">
           <nav className="navbar">
             <div className="navbar-brand">

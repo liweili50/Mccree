@@ -16,3 +16,8 @@ body {
 .hr {
   margin: 1rem 0;
 }
+
+::selection {
+  background-color: #00d1b2;
+  color: #fff;
+}

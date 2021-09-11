@@ -25,7 +25,7 @@ const Feedback = () => {
   };
   
   return (
-    <div className="section is-body is-mobile">
+    <div className="section is-body">
       <div className="container">
         <div className="feedback-content">
           <div className="field">
