@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import dayjs from "dayjs";
 import "./index.css";
 import { getPostsByTag } from "../../api/post";
 
@@ -12,7 +13,7 @@ const ArticleList = function (props) {
       </span>
       <Link to={"/post/" + article._id}>
         <span>
-          <span className="time">{article.createTime}</span>
+          <span className="time">{dayjs(article.createTime).format('YYYY-MM-DD HH:mm:ss')}</span>
           {article.title}
         </span>
       </Link>
