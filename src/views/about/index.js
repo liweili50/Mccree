@@ -4,10 +4,7 @@ function About() {
     <div className="content has-background-white p-6 has-padding-20-mobile">
       <h1>Hi there 🤞</h1>
       <p>
-        <a href="https://liweili50.com/">Logue</a>
-        <sup>
-          <a>[1]</a>
-        </sup>{" "}
+        <a href="https://liweili50.com/">Logue </a>
         是我的博客网站，这里会分享我在开发中遇到的问题和一些个人总结。也会有更多想法在后面的日子里实现展现在这里，欢迎不定期骚扰
         😘
       </p>
@@ -119,7 +116,7 @@ function About() {
       </p>
       <h3>Others</h3>
       <figure className="image is-2by1 has-margin-5-mobile">
-        <img src={img} />
+        <img src={img} alt="" />
         <figcaption>Figure 1: Some beautiful placeholders</figcaption>
       </figure>
       <p>
