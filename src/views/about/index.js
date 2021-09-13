@@ -120,7 +120,7 @@ function About() {
         <figcaption>Figure 1: Some beautiful placeholders</figcaption>
       </figure>
       <p>
-        秀一下我的终端，最近一年多一直使用<strong>Win 10</strong>
+        顺便秀一下我的终端，最近一年多一直使用<strong>Win 10</strong>
         作为开发主机，起初是很不情愿的，但是通过摸索尝试，还是找到了一套比较好的搭配。
       </p>
       <p>
