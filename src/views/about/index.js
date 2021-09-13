@@ -4,7 +4,7 @@ function About() {
     <div className="content has-background-white p-6 has-padding-20-mobile">
       <h1>Hi there 🤞</h1>
       <p>
-        <a href="https://liweili50.com/">Logue </a>
+        <a href="http://liweili50.com/">Logue </a>
         是我的博客网站，这里会分享我在开发中遇到的问题和一些个人总结。也会有更多想法在后面的日子里实现展现在这里，欢迎不定期骚扰
         😘
       </p>
@@ -136,9 +136,8 @@ function About() {
         是我最近最喜欢的一部动漫，而且还找了一张图当作
         <strong> Terminal </strong>
         的壁纸。哈哈哈~
-        <br />
-        如果你也在用 win 10，不妨一试。
       </p>
+      <p>如果你也在用 win 10，不妨一试。</p>
       <h4>😘 Thanks~</h4>
     </div>
   );
