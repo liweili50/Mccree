@@ -2,11 +2,11 @@ import img from "../../assets/img/placeholder.jpg";
 function About() {
   return (
     <div className="content has-background-white p-6 has-padding-20-mobile">
-      <h1>Hi there 🤞</h1>
+      <h1>Hi there 👏</h1>
       <p>
         <a href="http://liweili50.com/">Logue </a>
-        是我的博客网站，这里会分享我在开发中遇到的问题和一些个人总结。也会有更多想法在后面的日子里实现展现在这里，欢迎不定期骚扰
-        😘
+        是我的个人项目网站，这里会分享我在开发中遇到的问题和一些个人总结。也会有更多想法在后面的日子里实现展现在这里，欢迎不定期骚扰
+        🤞
       </p>
       <h3>Related front-end technology</h3>
       <ul>
@@ -117,7 +117,7 @@ function About() {
       <h3>Others</h3>
       <figure className="image is-2by1 has-margin-5-mobile">
         <img src={img} alt="" />
-        <figcaption>Figure 1: Some beautiful placeholders</figcaption>
+        <figcaption>Fate Saber</figcaption>
       </figure>
       <p>
         顺便秀一下我的终端，最近一年多一直使用<strong>Win 10</strong>
@@ -125,14 +125,12 @@ function About() {
       </p>
       <p>
         主要的开发配套设施是
-        <strong>VScode</strong> +<strong>Remote-WSL/SSH</strong> +{" "}
+        <strong>VScode</strong> + <strong>Remote-WSL/SSH</strong> +{" "}
         <strong>WSL2</strong> + <strong>Terminal</strong>
-        ，并且在wsl2下开发还可以学到了不少Linux知识。
+        ，并且还可以学到了不少Linux知识。
       </p>
       <p>
-        <a href="https://www.bilibili.com/read/cv845766">
-          <b>Fate </b>
-        </a>
+        <a href="https://www.bilibili.com/read/cv845766">Fate </a>
         是我最近最喜欢的一部动漫，而且还找了一张图当作
         <strong> Terminal </strong>
         的壁纸。哈哈哈~
