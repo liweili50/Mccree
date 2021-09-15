@@ -1,78 +1,82 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import Post from "./post";
 import Card from "../../components/card/card";
-import InfiniteScroll from "react-infinite-scroller";
 import { getPostsList } from "../../api/post";
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hasMore: true,
-      pageNum: 1,
-      pageSize: 5,
-      postList: [],
-    };
-    this.loadMore = this.loadMore.bind(this);
-  }
-  loadData() {
-    let params = {
-      pageSize: this.state.pageSize,
-      pageNum: this.state.pageNum,
-    };
-    if (this.props.location.pathname === "/search") {
-      let keyword = new URLSearchParams(this.props.location.search).get(
-        "keyword"
-      );
-      params.keyword = keyword;
-    }
-    getPostsList(params).then((res) => {
-      if (res.data.total > 0) {
-        this.setState({
-          postList: [...this.state.postList, ...res.data.list],
-          pageNum: this.state.pageNum + 1,
-        });
-        if (this.state.postList.length === res.data.total) {
-          this.setState({
-            hasMore: false,
-          });
-        }
-      } else {
-        this.setState({
-          postList: [],
-          hasMore: false,
-        });
-      }
-    });
-  }
-  loadMore() {
-    this.loadData();
-  }
-  render() {
-    let list = this.state.postList.map((article) => {
-      return <Post key={article._id} article={article} />;
-    });
-    return (
-      <div className="columns is-gapless">
-        <InfiniteScroll
-          className="column"
-          pageStart={0}
-          loadMore={this.loadMore}
-          hasMore={this.state.hasMore}
-          loader={<div key={0}>Loading ...</div>}
-        >
-          {this.state.postList.length === 0 && this.state.hasMore === false ? (
-            <div key={0}>Accident Happened ...</div>
-          ) : (
-            list
-          )}
-        </InfiniteScroll>
-        <div className="column ml-4 is-narrow is-hidden-touch">
-          <Card />
-        </div>
-      </div>
-    );
-  }
-}
+import { useInfiniteQuery } from "react-query";
+import { useInView } from "react-intersection-observer";
 
-export default (props) => <Home {...props} key={props.location.pathname} />;
+const Home = (props) => {
+  let keyword = new URLSearchParams(props.location.search).get("keyword");
+  const {
+    status,
+    data,
+    error,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+  } = useInfiniteQuery(
+    "posts",
+    async (data) => {
+      let pageParam = data.pageParam ?? 1;
+      const res = await getPostsList({
+        pageNum: pageParam,
+        pageSize: 5,
+        keyword,
+      });
+      return res.data;
+    },
+    {
+      getNextPageParam: (lastPage) => {
+        if (
+          !lastPage ||
+          lastPage.pageSize * lastPage.pageNum >= lastPage.total
+        ) {
+          return;
+        }
+        return lastPage.pageNum + 1;
+      },
+    }
+  );
+  const { ref, inView } = useInView({ threshold: 0 });
+  useEffect(() => {
+    if (hasNextPage && inView) {
+      fetchNextPage();
+    }
+  }, [inView, hasNextPage, fetchNextPage]);
+  return (
+    <div className="columns">
+      {status === "loading" ? (
+        <div className="column">Loading...</div>
+      ) : status === "error" ? (
+        <div className="column">{error.message}</div>
+      ) : (
+        <div className="column">
+          {data.pages.map((page) => (
+            <React.Fragment key={page.pageNum}>
+              {page.list.map((post) => (
+                <Post key={post._id} post={post} />
+              ))}
+            </React.Fragment>
+          ))}
+
+          <div
+            className="has-text-centered has-text-grey-light is-size-7 mx-4"
+            ref={ref}
+          >
+            {isFetchingNextPage
+              ? "加载中..."
+              : hasNextPage
+              ? "Load More"
+              : "没有更多了"}
+          </div>
+        </div>
+      )}
+      <div className="column ml-4 is-narrow is-hidden-touch">
+        <Card />
+      </div>
+    </div>
+  );
+};
+// eslint-disable-next-line
+export default (props) => <Home {...props} key={props.location.search} />;
