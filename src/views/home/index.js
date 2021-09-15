@@ -60,7 +60,7 @@ const Home = (props) => {
             </React.Fragment>
           ))}
 
-          {/* <div
+          <div
             className="has-text-centered has-text-grey-light is-size-7 mx-4"
             ref={ref}
           >
@@ -69,7 +69,7 @@ const Home = (props) => {
               : hasNextPage
               ? "Load More"
               : "没有更多了"}
-          </div> */}
+          </div>
         </div>
       )}
       <div className="column ml-4 is-narrow is-hidden-touch">
