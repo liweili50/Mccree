@@ -67,12 +67,9 @@ function About() {
         <b>海贼王</b>，所以特别想用 <code>Logue</code>
         这个域名，而且还有log记录的意思。
       </p>
-      <p>
-        {" "}
-        <blockquote>
-          罗格镇：被称为“开始与结束的城镇”，位置处于东海，伟大航路的入口附近，上一代海贼王哥尔·D·罗杰在罗格镇出生，也在这里被处决。
-        </blockquote>
-      </p>
+      <blockquote>
+        罗格镇：被称为“开始与结束的城镇”，位置处于东海，伟大航路的入口附近，上一代海贼王哥尔·D·罗杰在罗格镇出生，也在这里被处决。
+      </blockquote>
       <p>
         然后很快就用Node实现了一套博客系统，UI选择了相比bootstrap更轻量的
         <a href="https://bulma.io/"> Bulma.css</a>， 也在 <code>GitHub</code>{" "}
@@ -127,7 +124,7 @@ function About() {
         主要的开发配套设施是
         <strong>VScode</strong> + <strong>Remote-WSL/SSH</strong> +{" "}
         <strong>WSL2</strong> + <strong>Terminal</strong>
-        ，并且还可以学到了不少Linux知识。
+        ，并且还可以学到不少Linux知识。
       </p>
       <p>
         <a href="https://www.bilibili.com/read/cv845766">Fate </a>
