@@ -1,7 +1,6 @@
 import React from "react";
 import { useQueries } from "react-query";
 import { getBingDailyImage, getJonasEmotion } from "../../api/sundry";
-import "./card.css";
 import "balloon-css";
 
 const Card = () => {
@@ -36,7 +35,7 @@ const Card = () => {
   };
   return (
     <div className="card">
-      <div onClick={handleClick} className="card-image">
+      <div onClick={handleClick} className="card-image has-cursor-pointer">
         {res1.isSuccess && (
           <figure className="image is-3by2">
             <img
