@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import PrimaryRoute from "../components/layout";
+import loadable from "@loadable/component";
 
-import Home from "../views/home";
-import Archive from "../views/archive/index";
-import Post from "../views/post/index";
-import Feedback from "../views/feedback/index";
-import Tags from "../views/tags/index";
-import Tag from "../views/tag/index";
-import NoMatch from "../views/noMatch/index";
-import About from "../views/about/index";
+const Home = loadable(() => import("../views/home"));
+const Archive = loadable(() => import("../views/archive/index"));
+const Post = loadable(() => import("../views/post/index"));
+const Feedback = loadable(() => import("../views/feedback/index"));
+const Tags = loadable(() => import("../views/tags/index"));
+const Tag = loadable(() => import("../views/tag/index"));
+const NoMatch = loadable(() => import("../views/noMatch/index"));
+const About = loadable(() => import("../views/about/index"));
 
 class Routers extends Component {
   render() {
