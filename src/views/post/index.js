@@ -7,6 +7,7 @@ import { getPostById } from "../../api/post";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "gitalk/dist/gitalk.css";
+import "github-markdown-css/github-markdown.css"
 
 const Image = ({ children, ...props }) => {
   let { src, alt, folderName, ...rest } = props;
@@ -73,7 +74,7 @@ class Article extends Component {
             {this.state.time}
           </h2>
           <Markdown
-            className="content"
+            className="markdown-body"
             options={{
               forceBlock: true,
               overrides: {

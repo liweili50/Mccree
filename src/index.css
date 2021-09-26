@@ -18,3 +18,7 @@ body {
   background-color: #00d1b2;
   color: #fff;
 }
+
+.markdown-body ul{
+  list-style-type: initial;
+}
