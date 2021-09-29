@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 
 function Post(props) {
-  const tagItems = props.post.tags.map((tag, index) => (
+  const tagItems = props.post.tags?.map((tag, index) => (
     <Link to={"/tag/" + tag} key={index} className="tag">
       #{tag}
     </Link>
