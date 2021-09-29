@@ -8,7 +8,7 @@ function About() {
         是我的个人项目网站，这里会分享我在开发中遇到的问题和一些个人总结。也会有更多想法在后面的日子里实现展现在这里，欢迎不定期骚扰
         🤞
       </p>
-      <h3>Related front-end technology</h3>
+      <h3>Front-end</h3>
       <ul>
         <li>
           <a href="https://reactjs.org/">React</a> - A JavaScript library for
@@ -32,7 +32,7 @@ function About() {
         </a>
       </p>
 
-      <h3>Related back-end technology</h3>
+      <h3>Back-end</h3>
       <ul>
         <li>
           <a href="https://nodejs.org/en/">Node.js</a> - A JavaScript runtime
