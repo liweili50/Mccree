@@ -7,7 +7,7 @@ import { getPostById } from "../../api/post";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "gitalk/dist/gitalk.css";
-import "github-markdown-css/github-markdown.css"
+import "github-markdown-css/github-markdown.css";
 
 const Image = ({ children, ...props }) => {
   let { src, alt, folderName, ...rest } = props;
@@ -38,9 +38,13 @@ class Article extends Component {
       folderName: "",
     };
     this.handleGetArticle = this.handleGetArticle.bind(this);
+    this.handleGitalkInit = this.handleGitalkInit.bind(this)
   }
   componentDidMount() {
     this.handleGetArticle();
+    window.scrollTo(0, 0);
+  }
+  handleGitalkInit() {
     const gitalk = new Gitalk({
       clientID: "455057ff16e070218483",
       clientSecret: "1dcb080f82e4958655c4feb5bebf11310ca6face",
@@ -51,9 +55,8 @@ class Article extends Component {
       id: this.state.folderName, // Ensure uniqueness and length less than 50
       distractionFreeMode: true, // Facebook-like distraction free mode
     });
-
+    console.log(this.state)
     gitalk.render("comments");
-    window.scrollTo(0, 0);
   }
   handleGetArticle() {
     getPostById(this.props.match.params.id).then((res) => {
@@ -64,6 +67,7 @@ class Article extends Component {
         folderName,
         time: dayjs(createTime).format("YYYY-MM-DD HH:mm:ss"),
       });
+      this.handleGitalkInit()
     });
   }
   render() {
