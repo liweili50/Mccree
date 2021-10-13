@@ -47,7 +47,8 @@ class Article extends Component {
       repo: "liweili50.github.io",
       owner: "liweili50",
       admin: ["liweili50"],
-      id: this.props.match.params.id, // Ensure uniqueness and length less than 50
+      title: this.state.title,
+      id: this.state.folderName, // Ensure uniqueness and length less than 50
       distractionFreeMode: true, // Facebook-like distraction free mode
     });
 
