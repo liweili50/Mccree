@@ -72,7 +72,7 @@ class Article extends Component {
   render() {
     return (
       <DocumentTitle title={this.state.title}>
-        <div className="has-background-white px-6 pt-5 has-padding-20-mobile">
+        <div className="has-background-white px-6 py-5 has-padding-20-mobile">
           <h1 className="title pb-2"> {this.state.title}</h1>
           <h2 className="subtitle has-text-weight-normal is-size-6">
             {this.state.time}
