@@ -52,10 +52,9 @@ class Article extends Component {
       owner: "liweili50",
       admin: ["liweili50"],
       title: this.state.title,
-      id: this.props.id, // Ensure uniqueness and length less than 50
+      id: this.props.match.params.id, // Ensure uniqueness and length less than 50
       distractionFreeMode: true, // Facebook-like distraction free mode
     });
-    console.log(this.state)
     gitalk.render("comments");
   }
   handleGetArticle() {
