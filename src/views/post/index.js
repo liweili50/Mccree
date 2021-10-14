@@ -38,7 +38,7 @@ class Article extends Component {
       folderName: "",
     };
     this.handleGetArticle = this.handleGetArticle.bind(this);
-    this.handleGitalkInit = this.handleGitalkInit.bind(this)
+    this.handleGitalkInit = this.handleGitalkInit.bind(this);
   }
   componentDidMount() {
     this.handleGetArticle();
@@ -66,40 +66,42 @@ class Article extends Component {
         folderName,
         time: dayjs(createTime).format("YYYY-MM-DD HH:mm:ss"),
       });
-      this.handleGitalkInit()
+      this.handleGitalkInit();
     });
   }
   render() {
     return (
-      <DocumentTitle title={this.state.title}>
-        <div className="has-background-white px-6 py-5 has-padding-20-mobile">
-          <h1 className="title pb-2"> {this.state.title}</h1>
-          <h2 className="subtitle has-text-weight-normal is-size-6">
-            {this.state.time}
-          </h2>
-          <Markdown
-            className="markdown-body"
-            options={{
-              forceBlock: true,
-              overrides: {
-                img: {
-                  component: Image,
-                  props: {
-                    folderName: this.state.folderName,
+      this.state.content && (
+        <DocumentTitle title={this.state.title}>
+          <div className="has-background-white px-6 py-5 has-padding-20-mobile">
+            <h1 className="title pb-2"> {this.state.title}</h1>
+            <h2 className="subtitle has-text-weight-normal is-size-6">
+              {this.state.time}
+            </h2>
+            <Markdown
+              className="markdown-body"
+              options={{
+                forceBlock: true,
+                overrides: {
+                  img: {
+                    component: Image,
+                    props: {
+                      folderName: this.state.folderName,
+                    },
+                  },
+                  code: {
+                    component: Code,
                   },
                 },
-                code: {
-                  component: Code,
-                },
-              },
-            }}
-          >
-            {this.state.content}
-          </Markdown>
-          <hr />
-          <div id="comments" />
-        </div>
-      </DocumentTitle>
+              }}
+            >
+              {this.state.content}
+            </Markdown>
+            <hr />
+            <div id="comments" />
+          </div>
+        </DocumentTitle>
+      )
     );
   }
 }
