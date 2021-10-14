@@ -71,6 +71,12 @@ const Card = () => {
                 <br />
               </React.Fragment>
             ))}
+
+          <p className="has-text-right pt-1">
+            <a href="https://music.163.com/#/song?id=1478314423">
+              —— 「father and son」
+            </a>
+          </p>
         </div>
         <nav className="level is-mobile">
           <div className="level-left">
