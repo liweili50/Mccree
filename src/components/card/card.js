@@ -73,7 +73,7 @@ const Card = () => {
             ))}
 
           <p className="has-text-right pt-1">
-            <a href="https://music.163.com/#/song?id=1478314423" target="_blank">
+            <a href="https://music.163.com/#/song?id=1478314423" rel="noreferrer" target="_blank">
               —— 「father and son」
             </a>
           </p>
