@@ -15,7 +15,7 @@ function PrimaryRoute(props) {
       <Navbar />
       <main className="is-body is-flex-grow-1 my-5">
         <div className={`container is-max-desktop ${skeleton}`}>
-          <DocumentTitle title={props.title}>
+          <DocumentTitle title={props.title || "Logue"}>
             <Route {...props} />
           </DocumentTitle>
         </div>

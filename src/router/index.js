@@ -27,7 +27,7 @@ class Routers extends Component {
         <PrimaryRoute exact path="/post/:id" component={Post} />
         <PrimaryRoute exact path="/tags" title="标签" component={Tags} />
         <PrimaryRoute exact path="/tag/:id" component={Tag} />
-        <Route exact path="/feedback" component={Feedback} />
+        <Route exact path="/feedback" title="反馈" component={Feedback} />
         <Route component={NoMatch} />
       </Switch>
     );

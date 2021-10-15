@@ -2,21 +2,22 @@ import React, { Component } from "react";
 import jump from "jump.js";
 
 export default class BackToTop extends Component {
-  contructor() {
-    this.state({
+  constructor(props) {
+    super(props);
+    this.state = {
       isShow: false,
-    });
+    };
     this.getScroll = this.getScroll.bind(this);
   }
 
-  UNSAFE_componentWillMount() {
-    this.handleScroll();
+  componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
   }
 
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
+
   getScroll = (w, top) => {
     let ret = w[`page${top ? "Y" : "X"}Offset`];
     const method = `scroll${top ? "Top" : "Left"}`;
@@ -47,7 +48,7 @@ export default class BackToTop extends Component {
     return this.state.isShow ? (
       <div
         {...props}
-        className={`jump back-to-top ${className?className:''}`}
+        className={`jump back-to-top ${className ? className : ""}`}
         onClick={() => this.scrollToTop(options)}
       >
         {children}
