@@ -3,6 +3,8 @@ import Gitalk from "gitalk";
 import DocumentTitle from "react-document-title";
 import Markdown from "markdown-to-jsx";
 import dayjs from "dayjs";
+import mediumZoom from "medium-zoom";
+import ImageZoom from "./ImageZoom";
 import { getPostById } from "../../api/post";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -12,7 +14,16 @@ import "github-markdown-css/github-markdown.css";
 const Image = ({ children, ...props }) => {
   let { src, alt, folderName, ...rest } = props;
   let url = `https://github.com/liweili50/liweili50.github.io/blob/master/content/blog${folderName}${src}?raw=true`;
-  return <img src={url} alt={alt} {...rest} />;
+  let zoom = React.useRef(mediumZoom());
+  return (
+    <ImageZoom
+      src={url}
+      alt={alt}
+      zoom={zoom.current}
+      background="rgba(0,0,0,0.3)"
+      {...rest}
+    />
+  );
 };
 
 const Code = ({ className, children }) => {
@@ -60,12 +71,14 @@ class Article extends Component {
   handleGetArticle() {
     getPostById(this.props.match.params.id).then((res) => {
       let { title, folderName, content, createTime } = res.data;
-      this.setState({
-        title,
-        content,
-        folderName,
-        time: dayjs(createTime).format("YYYY-MM-DD HH:mm:ss"),
-      });
+      this.setState(
+        {
+          title,
+          content,
+          folderName,
+          time: dayjs(createTime).format("YYYY-MM-DD HH:mm:ss"),
+        }
+      );
       this.handleGitalkInit();
     });
   }
